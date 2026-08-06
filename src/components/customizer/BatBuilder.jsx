@@ -70,7 +70,7 @@ export default function BatBuilder() {
           </div>
           <div className="mt-3 flex items-center justify-between text-xs text-mist">
             <span>{bat.engraving ? '+ ₹499 engraving applied' : 'Engraving adds ₹499'}</span>
-            {bat.engraving && <button onClick={() => { setEngravingLocal(''); setBat({ engraving: '' }) }} className="font-semibold text-[#a33728]">Remove</button>}
+            {bat.engraving && <button onClick={() => { setEngravingLocal(''); setBat({ engraving: '' }) }} className="font-semibold text-espresso">Remove</button>}
           </div>
         </div>
       </div>

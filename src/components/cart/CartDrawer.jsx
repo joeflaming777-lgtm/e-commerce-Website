@@ -39,7 +39,7 @@ export default function CartDrawer({ open, onClose }) {
                       <p className="truncate text-sm font-bold text-espresso">{item.name}</p>
                       {item.meta && <p className="mt-0.5 truncate text-xs text-mist">{item.meta}</p>}
                     </div>
-                    <button onClick={() => remove(item.key)} aria-label="Remove item" className="mt-0.5 text-mist transition hover:text-[#b3261e]">
+                    <button onClick={() => remove(item.key)} aria-label="Remove item" className="mt-0.5 text-mist transition hover:text-espresso">
                       <Trash2 size={16} />
                     </button>
                   </div>

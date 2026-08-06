@@ -50,7 +50,7 @@ export default function Cart() {
                       <p className="font-display text-lg leading-tight text-espresso">{item.name}</p>
                       {item.meta && <p className="mt-0.5 text-xs text-mist">{item.meta}</p>}
                     </div>
-                    <button onClick={() => remove(item.key)} aria-label="Remove item" className="text-mist transition hover:text-[#b3261e]"><Trash2 size={17} /></button>
+                    <button onClick={() => remove(item.key)} aria-label="Remove item" className="text-mist transition hover:text-espresso"><Trash2 size={17} /></button>
                   </div>
                   <div className="mt-auto flex flex-wrap items-center justify-between gap-3 pt-3">
                     <Quantity value={item.qty} onChange={(q) => updateQty(item.key, q)} />

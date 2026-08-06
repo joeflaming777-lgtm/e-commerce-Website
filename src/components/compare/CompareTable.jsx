@@ -70,7 +70,7 @@ export default function CompareTable({ products }) {
                 return (
                   <div key={p.id} className={`relative bg-white px-4 py-4 text-center text-sm ${best ? 'font-bold text-willow' : 'text-espresso'}`}>
                     {val}
-                    {best && row.type === 'price' && <span className="absolute -top-1 left-1/2 -translate-x-1/2 rounded-full bg-[#7e2315] px-2 py-0.5 text-[9px] font-bold uppercase text-ivory">Best price</span>}
+                    {best && row.type === 'price' && <span className="absolute -top-1 left-1/2 -translate-x-1/2 rounded-full bg-espresso px-2 py-0.5 text-[9px] font-bold uppercase text-ivory">Best price</span>}
                     {best && row.type === 'rating' && <span className="absolute -top-1 left-1/2 -translate-x-1/2 flex -translate-x-1/2 items-center gap-0.5 rounded-full bg-willow px-2 py-0.5 text-[9px] font-bold uppercase text-ivory"><Star size={8} className="fill-ivory" />Top</span>}
                   </div>
                 )

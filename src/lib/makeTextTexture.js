@@ -2,7 +2,7 @@ import * as THREE from 'three'
 
 // Draws text onto an offscreen canvas and returns a THREE.CanvasTexture —
 // used for bat engraving / ball seam text without any external font files.
-export function makeTextTexture(text, { color = '#4a3320', bg = 'rgba(0,0,0,0)', size = 96 } = {}) {
+export function makeTextTexture(text, { color = '#2e2e2e', bg = 'rgba(0,0,0,0)', size = 96 } = {}) {
   const canvas = document.createElement('canvas')
   canvas.width = 1024
   canvas.height = 160

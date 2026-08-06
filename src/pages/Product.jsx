@@ -57,7 +57,7 @@ export default function Product() {
                     <Suspense fallback={<div className="grid h-full place-items-center"><div className="h-10 w-10 animate-spin rounded-full border-2 border-leather border-t-transparent" /></div>}>
                       <ProductViewer
                         type={product.category}
-                        wood="#E7D7B6" grip="#3F2A1A" sticker="#1F1A33"
+                        wood="#E4E4E4" grip="#1F1F1F" sticker="#0A0A0A"
                       />
                     </Suspense>
                   </div>
@@ -69,7 +69,7 @@ export default function Product() {
               )}
 
               <div className="absolute left-4 top-4 flex flex-col items-start gap-1.5">
-                {discount >= 10 && <span className="rounded-full bg-[#7e2315] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-ivory">-{discount}%</span>}
+                {discount >= 10 && <span className="rounded-full bg-espresso px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-ivory">-{discount}%</span>}
               </div>
 
               {is3d && (
@@ -109,7 +109,7 @@ export default function Product() {
             <div className="mt-5 flex items-end gap-3">
               <span className="font-display text-4xl font-semibold text-espresso">{formatINR(price)}</span>
               <span className="pb-1 text-base text-mist line-through">{formatINR(mrp)}</span>
-              <span className="pb-1 text-sm font-bold text-[#7e2315]">Save {formatINR(mrp - price)}</span>
+              <span className="pb-1 text-sm font-bold text-espresso">Save {formatINR(mrp - price)}</span>
             </div>
             <p className="mt-1.5 flex items-center gap-1.5 text-xs text-mist">
               <ShieldCheck size={13} className="text-willow" /> Inclusive of all taxes · {stock > 0 ? `${stock} in stock` : 'Out of stock'}

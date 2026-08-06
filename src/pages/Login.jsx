@@ -1,58 +1,44 @@
 import { useState } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import Page from '../components/layout/Page'
-import GoogleMockModal from '../components/auth/GoogleMockModal'
-import OTPInput from '../components/auth/OTPInput'
-import Input from '../components/ui/Input'
 import { useAuth } from '../store/useAuth'
 import { toast } from '../components/ui/Toast'
 import ProductArt from '../assets/art/ProductArt'
-import { Loader2, Phone, ShieldCheck, ChevronLeft } from 'lucide-react'
-
-const DEMO_OTP = '123456'
+import { Loader2, Mail, Lock, User as UserIcon, Eye, EyeOff, ShieldCheck, ChevronLeft } from 'lucide-react'
 
 export default function Login() {
-  const { user, login } = useAuth()
+  const { user, login, register } = useAuth()
   const navigate = useNavigate()
-  const [method, setMethod] = useState('google')
-  const [googleOpen, setGoogleOpen] = useState(false)
-  const [phone, setPhone] = useState('')
-  const [step, setStep] = useState(1) // 1 number, 2 otp
-  const [otp, setOtp] = useState('')
-  const [verifying, setVerifying] = useState(false)
+  const [mode, setMode] = useState('login') // 'login' | 'register'
+  const [form, setForm] = useState({ name: '', email: '', password: '' })
   const [errors, setErrors] = useState({})
+  const [showPw, setShowPw] = useState(false)
+  const [busy, setBusy] = useState(false)
 
   if (user) return <Navigate to="/account" replace />
 
-  const startOtp = () => {
-    if (!/^[0-9]{10}$/.test(phone)) {
-      setErrors({ phone: 'Enter a valid 10-digit mobile number.' })
-      return
-    }
-    setErrors({})
-    setStep(2)
-    setOtp('')
+  const set = (k) => (e) => {
+    setForm((f) => ({ ...f, [k]: e.target.value }))
+    if (errors[k]) setErrors((er) => ({ ...er, [k]: '' }))
   }
 
-  const verifyOtp = () => {
-    if (otp.length !== 6) return
-    setVerifying(true)
+  const field =
+    'w-full rounded-xl border border-espresso/15 bg-white pl-11 pr-11 py-3 text-sm outline-none placeholder:text-mist focus:border-willow'
+  const italic = 'text-sm text-mist'
+
+  const submit = (e) => {
+    e.preventDefault()
+    setBusy(true)
     setTimeout(() => {
-      setVerifying(false)
-      if (otp !== DEMO_OTP) {
-        setErrors({ otp: 'That code doesn’t match. Try the demo code below.' })
+      const res = mode === 'login' ? login(form) : register(form)
+      setBusy(false)
+      if (!res.ok) {
+        setErrors({ form: res.error })
         return
       }
-      login({ name: 'Cricketer', phone, method: 'mobile' })
-      toast('Welcome back, Cricketer! 🏏', 'success')
+      toast(mode === 'login' ? `Welcome back, ${form.email.split('@')[0]}! 🏏` : 'Account created — welcome to Maidan! 🏏', 'success')
       navigate('/account')
-    }, 1100)
-  }
-
-  const googleSelect = (acc) => {
-    login({ name: acc.name, email: acc.email, method: 'google' })
-    toast(`Signed in as ${acc.name}`, 'success')
-    navigate('/account')
+    }, 700)
   }
 
   return (
@@ -86,73 +72,73 @@ export default function Login() {
         <div className="flex items-center justify-center bg-linen p-6 sm:p-12">
           <div className="w-full max-w-sm">
             <div className="lg:hidden"><Link to="/" className="inline-flex items-center gap-1.5 text-sm font-semibold text-mist transition hover:text-espresso"><ChevronLeft size={15} /> Back to store</Link></div>
-            <h1 className="mt-4 font-display text-3xl font-semibold text-espresso lg:mt-0">Welcome back</h1>
-            <p className="mt-2 text-sm text-mist">Sign in to track orders and build your kit.</p>
+            <h1 className="mt-4 font-display text-3xl font-semibold text-espresso lg:mt-0">
+              {mode === 'register' ? 'Create your account' : 'Welcome back'}
+            </h1>
+            <p className="mt-2 text-sm text-mist">
+              {mode === 'register' ? 'Join Maidan to unlock orders, Build Studio and compare.' : 'Sign in to track orders and build your kit.'}
+            </p>
 
-            {/* method tabs */}
+            {/* mode tabs */}
             <div className="mt-7 grid grid-cols-2 gap-1 rounded-full border border-espresso/10 bg-white/70 p-1">
-              <button onClick={() => setMethod('google')} className={`rounded-full py-2.5 text-sm font-bold transition ${method === 'google' ? 'bg-espresso text-ivory' : 'text-espresso'}`}>Google</button>
-              <button onClick={() => setMethod('mobile')} className={`rounded-full py-2.5 text-sm font-bold transition ${method === 'mobile' ? 'bg-espresso text-ivory' : 'text-espresso'}`}>Mobile number</button>
+              <button onClick={() => { setMode('login'); setErrors({}) }} className={`rounded-full py-2.5 text-sm font-bold transition ${mode === 'login' ? 'bg-espresso text-ivory' : 'text-espresso'}`}>Sign in</button>
+              <button onClick={() => { setMode('register'); setErrors({}) }} className={`rounded-full py-2.5 text-sm font-bold transition ${mode === 'register' ? 'bg-espresso text-ivory' : 'text-espresso'}`}>Create account</button>
             </div>
 
-            <div className="mt-7">
-              {method === 'google' ? (
-                <>
-                  <button onClick={() => setGoogleOpen(true)}
-                    className="flex w-full items-center justify-center gap-3 rounded-full border border-espresso/15 bg-white py-3.5 text-sm font-bold text-espresso transition hover:-translate-y-0.5 hover:shadow-card">
-                    <svg viewBox="0 0 48 48" className="h-5 w-5">
-                      <path fill="#EA4335" d="M24 9.5a14.5 14.5 0 0 1 10.1 3.9l4.3-4.3A24 24 0 0 0 24 2C15.3 2 7.9 6.9 3.6 13.8l6.2 4.8A14.4 14.4 0 0 1 24 9.5z" />
-                      <path fill="#4285F4" d="M24 40.5c-4.2 0-8.1-1.7-10.9-4.5l-6.2 4.8A23.9 23.9 0 0 0 24 46c5.7 0 10.9-2 14.9-5.4l-5.9-4.6c-2.6 1.9-5.9 3-9 3z" />
-                      <path fill="#FBBC05" d="M46.5 24c0-1.5-.2-3-.5-4.5H24v9h12.9a11 11 0 0 1-4.9 6.1l5.9 4.6c3.5-3.2 5.6-7.9 5.6-11.8z" />
-                      <path fill="#34A853" d="M24 40.5a14.3 14.3 0 0 1-10.9-5L6.9 40.3A24 24 0 0 0 24 46c5.7 0 10.9-2 14.9-5.4l-5.9-4.6c-2.6 1.9-5.9 3-9 3z" />
-                    </svg>
-                    Continue with Google
-                  </button>
-                  <p className="mt-3 text-center text-[11px] leading-relaxed text-mist">
-                    Demo build — a stand-in for real Google sign-in. Choose a mock account to continue.
-                  </p>
-                </>
-              ) : step === 1 ? (
-                <div className="space-y-4">
-                  <Input
-                    label="Mobile number"
-                    inputMode="numeric"
-                    maxLength={10}
-                    placeholder="10-digit number"
-                    value={phone}
-                    error={errors.phone}
-                    onChange={(e) => setPhone(e.target.value.replace(/[^0-9]/g, ''))}
-                  />
-                  <button onClick={startOtp} className="flex w-full items-center justify-center gap-2 rounded-full bg-espresso py-3.5 text-sm font-bold text-ivory transition hover:bg-black">
-                    <Phone size={15} /> Get OTP
-                  </button>
-                </div>
-              ) : (
-                <div className="space-y-5">
-                  <div className="flex items-center justify-between rounded-2xl border border-espresso/10 bg-white px-4 py-3">
-                    <span className="text-sm text-mist">OTP sent to <span className="font-bold text-espresso">+91 {phone.slice(0, 5)} {phone.slice(5)}</span></span>
-                    <button onClick={() => { setStep(1); setErrors({}) }} className="text-xs font-bold text-leather hover:text-willow">Edit</button>
+            <form onSubmit={submit} className="mt-6 space-y-4">
+              {mode === 'register' && (
+                <label className="block">
+                  <span className="mb-1.5 block text-[11px] font-bold uppercase tracking-[0.16em] text-espresso/70">Full name</span>
+                  <div className="relative">
+                    <UserIcon size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-mist" />
+                    <input value={form.name} onChange={set('name')} placeholder="e.g. Arjun Mehta" className={field} />
                   </div>
-                  <OTPInput value={otp} onChange={setOtp} />
-                  <div className="rounded-xl bg-sand/30 px-4 py-2.5 text-center text-xs font-semibold text-espresso">
-                    Demo code for this build: <span className="font-display text-sm tracking-[0.2em]">123456</span>
-                  </div>
-                  {errors.otp && <p className="text-center text-xs font-semibold text-[#b3261e]">{errors.otp}</p>}
-                  <button onClick={verifyOtp} disabled={otp.length !== 6 || verifying}
-                    className="flex w-full items-center justify-center gap-2 rounded-full bg-espresso py-3.5 text-sm font-bold text-ivory transition hover:bg-black disabled:opacity-50">
-                    {verifying && <Loader2 size={15} className="animate-spin" />} Verify & sign in
-                  </button>
-                </div>
+                </label>
               )}
-            </div>
 
-            <p className="mt-8 text-center text-[11px] leading-relaxed text-mist">
-              By continuing you agree to our Terms &amp; Privacy Policy. We use your number only for order updates and OTP login.
+              <label className="block">
+                <span className="mb-1.5 block text-[11px] font-bold uppercase tracking-[0.16em] text-espresso/70">Email address</span>
+                <div className="relative">
+                  <Mail size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-mist" />
+                  <input type="email" value={form.email} onChange={set('email')} placeholder="you@example.com" className={field} />
+                </div>
+              </label>
+
+              <label className="block">
+                <span className="mb-1.5 block text-[11px] font-bold uppercase tracking-[0.16em] text-espresso/70">Password</span>
+                <div className="relative">
+                  <Lock size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-mist" />
+                  <input type={showPw ? 'text' : 'password'} value={form.password} onChange={set('password')} placeholder={mode === 'register' ? 'At least 6 characters' : '••••••••'} className={field} />
+                  <button type="button" onClick={() => setShowPw((v) => !v)} aria-label="Toggle password visibility" className="absolute right-3 top-1/2 -translate-y-1/2 text-mist transition hover:text-espresso">
+                    {showPw ? <EyeOff size={16} /> : <Eye size={16} />}
+                  </button>
+                </div>
+              </label>
+
+              {mode === 'register' && (
+                <p className="text-xs leading-relaxed text-mist">
+                  By creating an account you can track orders, save your Build Studio kit and manage your address book.
+                </p>
+              )}
+
+              {errors.form && <p className="rounded-xl bg-leather/10 px-4 py-2.5 text-xs font-semibold text-espresso">{errors.form}</p>}
+
+              <button type="submit" disabled={busy}
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-espresso py-3.5 text-sm font-bold text-ivory transition hover:bg-black disabled:opacity-60">
+                {busy && <Loader2 size={15} className="animate-spin" />}
+                {mode === 'register' ? 'Create account' : 'Sign in'}
+              </button>
+            </form>
+
+            <p className="mt-6 text-center text-sm text-mist">
+              {mode === 'register' ? 'Already a member? ' : 'New to Maidan? '}
+              <button onClick={() => { setMode(mode === 'register' ? 'login' : 'register'); setErrors({}) }} className="font-bold text-leather transition hover:text-willow">
+                {mode === 'register' ? 'Sign in' : 'Create an account'}
+              </button>
             </p>
           </div>
         </div>
       </div>
-      <GoogleMockModal open={googleOpen} onClose={() => setGoogleOpen(false)} onSelect={googleSelect} />
     </Page>
   )
 }

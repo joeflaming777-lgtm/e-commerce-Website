@@ -29,10 +29,10 @@ export default function GoogleMockModal({ open, onClose, onSelect }) {
         <div className="flex items-center justify-center gap-2">
           <span className="grid h-10 w-10 place-items-center rounded-full bg-white shadow">
             <svg viewBox="0 0 48 48" className="h-5 w-5">
-              <path fill="#EA4335" d="M24 9.5a14.5 14.5 0 0 1 10.1 3.9l4.3-4.3A24 24 0 0 0 24 2C15.3 2 7.9 6.9 3.6 13.8l6.2 4.8A14.4 14.4 0 0 1 24 9.5z" />
-              <path fill="#4285F4" d="M24 40.5c-4.2 0-8.1-1.7-10.9-4.5l-6.2 4.8A23.9 23.9 0 0 0 24 46c5.7 0 10.9-2 14.9-5.4l-5.9-4.6c-2.6 1.9-5.9 3-9 3z" />
-              <path fill="#FBBC05" d="M46.5 24c0-1.5-.2-3-.5-4.5H24v9h12.9a11 11 0 0 1-4.9 6.1l5.9 4.6c3.5-3.2 5.6-7.9 5.6-11.8z" />
-              <path fill="#34A853" d="M24 40.5a14.3 14.3 0 0 1-10.9-5L6.9 40.3A24 24 0 0 0 24 46c5.7 0 10.9-2 14.9-5.4l-5.9-4.6c-2.6 1.9-5.9 3-9 3z" />
+              <path fill="#6b6b6b" d="M24 9.5a14.5 14.5 0 0 1 10.1 3.9l4.3-4.3A24 24 0 0 0 24 2C15.3 2 7.9 6.9 3.6 13.8l6.2 4.8A14.4 14.4 0 0 1 24 9.5z" />
+              <path fill="#6b6b6b" d="M24 40.5c-4.2 0-8.1-1.7-10.9-4.5l-6.2 4.8A23.9 23.9 0 0 0 24 46c5.7 0 10.9-2 14.9-5.4l-5.9-4.6c-2.6 1.9-5.9 3-9 3z" />
+              <path fill="#6b6b6b" d="M46.5 24c0-1.5-.2-3-.5-4.5H24v9h12.9a11 11 0 0 1-4.9 6.1l5.9 4.6c3.5-3.2 5.6-7.9 5.6-11.8z" />
+              <path fill="#6b6b6b" d="M24 40.5a14.3 14.3 0 0 1-10.9-5L6.9 40.3A24 24 0 0 0 24 46c5.7 0 10.9-2 14.9-5.4l-5.9-4.6c-2.6 1.9-5.9 3-9 3z" />
             </svg>
           </span>
           <span className="text-sm font-bold text-espresso">Sign in with Google</span>

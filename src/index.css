@@ -1,22 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ivory: #f7f3ec;
-  --color-cream: #efe7d9;
-  --color-sand: #e2d3b8;
-  --color-linen: #fcfaf5;
-  --color-leather: #b08a5e;
-  --color-willow: #6b4a2b;
-  --color-espresso: #3f2a1a;
-  --color-ink: #2b2118;
-  --color-mist: #8b7d6c;
+  --color-ivory: #ffffff;
+  --color-cream: #f4f4f4;
+  --color-sand: #e6e6e6;
+  --color-linen: #fafafa;
+  --color-leather: #8a8a8a;
+  --color-willow: #1c1c1c;
+  --color-espresso: #0a0a0a;
+  --color-ink: #0a0a0a;
+  --color-mist: #6b6b6b;
 
   --font-display: "Fraunces", "Georgia", serif;
   --font-sans: "Manrope", "Segoe UI", system-ui, sans-serif;
 
-  --shadow-warm: 0 18px 40px -18px rgba(63, 42, 26, 0.28);
-  --shadow-card: 0 10px 30px -12px rgba(63, 42, 26, 0.18);
-  --shadow-lift: 0 26px 60px -22px rgba(63, 42, 26, 0.35);
+  --shadow-warm: 0 18px 40px -18px rgba(0, 0, 0, 0.28);
+  --shadow-card: 0 10px 30px -12px rgba(0, 0, 0, 0.18);
+  --shadow-lift: 0 26px 60px -22px rgba(0, 0, 0, 0.35);
 
   --radius-btn: 999px;
 }
@@ -31,23 +31,23 @@
     font-feature-settings: "ss01", "cv11";
   }
   ::selection {
-    background: #3f2a1a;
-    color: #f7f3ec;
+    background: #0a0a0a;
+    color: #ffffff;
   }
   ::-webkit-scrollbar {
     width: 11px;
     height: 11px;
   }
   ::-webkit-scrollbar-track {
-    background: #efe7d9;
+    background: #f4f4f4;
   }
   ::-webkit-scrollbar-thumb {
-    background: #b08a5e;
+    background: #b9b9b9;
     border-radius: 8px;
-    border: 3px solid #efe7d9;
+    border: 3px solid #f4f4f4;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #6b4a2b;
+    background: #666666;
   }
   h1, h2, h3, h4 {
     @apply font-display;

@@ -27,7 +27,7 @@ export default function CompareBar() {
                 <Scale size={14} className="text-leather" /> Compare ({products.length}/4)
               </span>
               {products.length > 1 && (
-                <button onClick={clear} className="text-xs font-semibold text-mist transition hover:text-[#b3261e]">
+                <button onClick={clear} className="text-xs font-semibold text-mist transition hover:text-espresso">
                   Clear all
                 </button>
               )}

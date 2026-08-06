@@ -4,29 +4,29 @@ export const BAT_OPTIONS = {
   woodTone: {
     label: 'Willow grade',
     values: [
-      { key: 'english', name: 'English Willow (Pro)', color: '#E7D7B6' },
-      { key: 'kashmir', name: 'Kashmir Willow', color: '#C9B487' },
-      { key: 'vintage', name: 'Vintage Dry Willow', color: '#E0C48F' },
-      { key: 'dark', name: 'Premium Select', color: '#B39A6F' },
+      { key: 'english', name: 'English Willow (Pro)', color: '#E4E4E4' },
+      { key: 'kashmir', name: 'Kashmir Willow', color: '#C9C9C9' },
+      { key: 'vintage', name: 'Vintage Dry Willow', color: '#B4B4B4' },
+      { key: 'dark', name: 'Premium Select', color: '#8A8A8A' },
     ],
   },
   gripColor: {
     label: 'Grip colour',
     values: [
-      { key: 'espresso', name: 'Espresso', color: '#3F2A1A' },
-      { key: 'graphite', name: 'Graphite', color: '#2B2B2B' },
-      { key: 'cream', name: 'Cream', color: '#F3EBD9' },
-      { key: 'oxblood', name: 'Oxblood', color: '#6E2B2B' },
-      { key: 'willow', name: 'Willow', color: '#6B4A2B' },
+      { key: 'espresso', name: 'Ink', color: '#1A1A1A' },
+      { key: 'graphite', name: 'Graphite', color: '#2E2E2E' },
+      { key: 'cream', name: 'Ivory', color: '#EFEFEF' },
+      { key: 'oxblood', name: 'Charcoal', color: '#1F1F1F' },
+      { key: 'willow', name: 'Slate', color: '#454545' },
     ],
   },
   sticker: {
     label: 'Sticker style',
     values: [
-      { key: 'classic', name: 'Classic', color: '#1F1A33' },
-      { key: 'crimson', name: 'Crimson', color: '#8A1F21' },
-      { key: 'forest', name: 'Forest', color: '#1F4A33' },
-      { key: 'gold', name: 'Gold', color: '#A9821F' },
+      { key: 'classic', name: 'Classic', color: '#0A0A0A' },
+      { key: 'crimson', name: 'Charcoal', color: '#2E2E2E' },
+      { key: 'forest', name: 'Slate', color: '#4A4A4A' },
+      { key: 'gold', name: 'Ivory', color: '#E0E0E0' },
     ],
   },
 }
@@ -35,34 +35,34 @@ export const JERSEY_OPTIONS = {
   baseColor: {
     label: 'Body colour',
     values: [
-      { key: 'navy', name: 'Navy', color: '#1F2840' },
-      { key: 'forest', name: 'Forest', color: '#1F4632' },
-      { key: 'espresso', name: 'Espresso', color: '#3A2A1E' },
-      { key: 'black', name: 'Ink', color: '#23201C' },
-      { key: 'oxblood', name: 'Oxblood', color: '#67251F' },
+      { key: 'navy', name: 'Ink', color: '#0F0F0F' },
+      { key: 'forest', name: 'Graphite', color: '#2E2E2E' },
+      { key: 'espresso', name: 'Slate', color: '#454545' },
+      { key: 'black', name: 'Charcoal', color: '#1F1F1F' },
+      { key: 'oxblood', name: 'Stone', color: '#5C5C5C' },
     ],
   },
   sleeveColor: {
     label: 'Sleeve / trim',
     values: [
-      { key: 'cream', name: 'Cream', color: '#EFE7D9' },
-      { key: 'gold', name: 'Gold', color: '#C09A3E' },
-      { key: 'white', name: 'Ivory', color: '#F7F3EC' },
-      { key: 'orange', name: 'Tangerine', color: '#D9702A' },
+      { key: 'cream', name: 'Ivory', color: '#EFEFEF' },
+      { key: 'gold', name: 'Sand', color: '#C9C9C9' },
+      { key: 'white', name: 'White', color: '#FAFAFA' },
+      { key: 'orange', name: 'Ash', color: '#9A9A9A' },
     ],
   },
 }
 
 export const BALL_COLORS = [
-  { key: 'red', name: 'Test Red', color: '#B33A2B' },
-  { key: 'white', name: 'T20 White', color: '#F5F1E6' },
-  { key: 'pink', name: 'Day-Night Pink', color: '#E27B8C' },
-  { key: 'yellow', name: 'Training Yellow', color: '#E8B93A' },
+  { key: 'red', name: 'Ink', color: '#262626' },
+  { key: 'white', name: 'Ivory', color: '#F5F5F5' },
+  { key: 'pink', name: 'Ash', color: '#A8A8A8' },
+  { key: 'yellow', name: 'Stone', color: '#6B6B6B' },
 ]
 
 export const useCustomizer = create((set) => ({
   bat: { woodTone: 'english', gripColor: 'espresso', sticker: 'classic', engraving: '' },
-  jersey: { baseColor: 'navy', sleeveColor: 'cream', name: '', number: '07' },
+  jersey: { baseColor: 'navy', sleeveColor: 'cream', teamName: '', name: '', number: '07' },
   ball: { color: 'red', seamText: '' },
   setBat: (patch) => set((s) => ({ bat: { ...s.bat, ...patch } })),
   setJersey: (patch) => set((s) => ({ jersey: { ...s.jersey, ...patch } })),

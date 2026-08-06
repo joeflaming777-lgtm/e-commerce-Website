@@ -1,5 +1,5 @@
 const tones = {
-  sale: 'bg-[#7e2315] text-ivory',
+  sale: 'bg-espresso text-ivory',
   new: 'bg-willow text-ivory',
   brand: 'bg-espresso text-ivory',
   soft: 'bg-cream text-espresso',

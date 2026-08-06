@@ -73,7 +73,7 @@ export default function ProductCard({ product, index = 0 }) {
           <div className="mt-3 flex items-center gap-2.5">
             <span className="text-[15px] font-bold text-willow">{formatINR(price)}</span>
             <span className="text-[13px] text-mist line-through">{formatINR(mrp)}</span>
-            {discount > 0 && <span className="text-[12px] font-bold text-[#7e2315]">-{discount}%</span>}
+            {discount > 0 && <span className="text-[12px] font-bold text-espresso">-{discount}%</span>}
           </div>
           <div className="mt-3 flex items-center gap-2">
             <span className="flex gap-1">
@@ -84,9 +84,9 @@ export default function ProductCard({ product, index = 0 }) {
             <button
               onClick={() => { setWish((w) => !w); toast(wish ? 'Removed from wishlist' : 'Saved to wishlist') }}
               aria-label="Save to wishlist"
-              className={`ml-auto grid h-8 w-8 place-items-center rounded-full transition ${wish ? 'bg-[#7e2315]/10 text-[#a33728]' : 'text-mist hover:bg-cream hover:text-espresso'}`}
+              className={`ml-auto grid h-8 w-8 place-items-center rounded-full transition ${wish ? 'bg-espresso/10 text-espresso' : 'text-mist hover:bg-cream hover:text-espresso'}`}
             >
-              <Heart size={15} className={wish ? 'fill-[#a33728]' : ''} />
+              <Heart size={15} className={wish ? 'fill-espresso' : ''} />
             </button>
           </div>
         </div>

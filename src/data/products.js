@@ -268,10 +268,10 @@ export const AUDIENCES = [
 
 // colorway name → hex swatch for card dots
 export const SWATCH = {
-  Espresso: '#3F2A1A', Cream: '#EFE7D9', Oxblood: '#8E2E2E', Navy: '#2A3A5C',
-  Gold: '#C09A3E', Red: '#C0392B', Ivory: '#F2EAD9', White: '#FFFFFF',
-  Yellow: '#E8B93A', Green: '#35613C', Crimson: '#6A1F21', Blue: '#35618C',
-  Orange: '#D9702A', Pink: '#D66A7C', Black: '#20160F',
+  Espresso: '#2E2E2E', Cream: '#EFEFEF', Oxblood: '#5C5C5C', Navy: '#1F1F1F',
+  Gold: '#C9C9C9', Red: '#333333', Ivory: '#F2F2F2', White: '#FFFFFF',
+  Yellow: '#B4B4B4', Green: '#4A4A4A', Crimson: '#3A3A3A', Blue: '#6B6B6B',
+  Orange: '#B4B4B4', Pink: '#A8A8A8', Black: '#1A1A1A',
 }
 
 export const formatINR = (n) => '₹' + n.toLocaleString('en-IN')

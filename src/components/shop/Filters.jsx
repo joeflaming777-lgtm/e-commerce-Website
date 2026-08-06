@@ -30,7 +30,7 @@ export default function Filters({ state, set }) {
   return (
     <div className="rounded-3xl border border-espresso/10 bg-white/60 p-5">
       {hasActive && (
-        <button onClick={() => set.reset()} className="mb-2 inline-flex items-center gap-1.5 text-xs font-bold text-espresso transition hover:text-[#a33728]">
+        <button onClick={() => set.reset()} className="mb-2 inline-flex items-center gap-1.5 text-xs font-bold text-espresso transition hover:text-willow">
           <RotateCcw size={13} /> Clear filters
         </button>
       )}

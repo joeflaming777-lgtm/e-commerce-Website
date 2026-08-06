@@ -11,6 +11,22 @@ const ICONS = { truck: Truck, refresh: RefreshCcw, wrench: ShieldCheck, ruler: S
 export default function Support() {
   const [q, setQ] = useState('')
   const [sent, setSent] = useState(false)
+  const [contact, setContact] = useState({ name: '', email: '', topic: 'Orders & delivery', message: '' })
+
+  const setField = (k) => (e) => setContact((c) => ({ ...c, [k]: e.target.value }))
+
+  // No backend on this static build — open the visitor's email client addressed
+  // to the email address they typed, with the message pre-filled.
+  const submitContact = (e) => {
+    e.preventDefault()
+    const { name, email, topic, message } = contact
+    const subjectLine = encodeURIComponent(`Maidan support enquiry — ${topic}`)
+    const body = encodeURIComponent(`Hi,\n\n${message}\n\n— ${name}\n(sent from maidan.co support)`)
+    const href = `mailto:${email}?subject=${subjectLine}&body=${body}`
+    window.location.href = href
+    setSent(true)
+    toast('Opening your email app with the message ready to send', 'success')
+  }
 
   const topics = SUPPORT_TOPICS.filter((t) => t.title.toLowerCase().includes(q.toLowerCase()) || t.blurb.toLowerCase().includes(q.toLowerCase()))
   const faqs = FAQS.filter((f) => f.q.toLowerCase().includes(q.toLowerCase()))
@@ -71,18 +87,21 @@ export default function Support() {
                 <button onClick={() => setSent(false)} className="mt-6 text-sm font-bold text-leather hover:text-willow">Send another</button>
               </div>
             ) : (
-              <form onSubmit={(e) => { e.preventDefault(); setSent(true); toast('Message sent to support', 'success') }} className="mt-5 space-y-4">
+              <form onSubmit={submitContact} className="mt-5 space-y-4">
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <input required placeholder="Your name" className="w-full rounded-xl border border-espresso/15 bg-white px-4 py-3 text-sm outline-none placeholder:text-mist focus:border-willow" />
-                  <input required type="email" placeholder="Email address" className="w-full rounded-xl border border-espresso/15 bg-white px-4 py-3 text-sm outline-none placeholder:text-mist focus:border-willow" />
+                  <input required placeholder="Your name" value={contact.name} onChange={setField('name')} className="w-full rounded-xl border border-espresso/15 bg-white px-4 py-3 text-sm outline-none placeholder:text-mist focus:border-willow" />
+                  <input required type="email" placeholder="Email address" value={contact.email} onChange={setField('email')} className="w-full rounded-xl border border-espresso/15 bg-white px-4 py-3 text-sm outline-none placeholder:text-mist focus:border-willow" />
                 </div>
-                <select className="w-full rounded-xl border border-espresso/15 bg-white px-4 py-3 text-sm text-espresso outline-none focus:border-willow">
+                <select value={contact.topic} onChange={setField('topic')} className="w-full rounded-xl border border-espresso/15 bg-white px-4 py-3 text-sm text-espresso outline-none focus:border-willow">
                   {['Orders & delivery', 'Returns & warranty', 'Build Studio / custom', 'Sizing help', 'Something else'].map((o) => <option key={o}>{o}</option>)}
                 </select>
-                <textarea required rows={4} placeholder="Tell us what you need…" className="w-full resize-none rounded-xl border border-espresso/15 bg-white px-4 py-3 text-sm outline-none placeholder:text-mist focus:border-willow" />
+                <textarea required rows={4} placeholder="Tell us what you need…" value={contact.message} onChange={setField('message')} className="w-full resize-none rounded-xl border border-espresso/15 bg-white px-4 py-3 text-sm outline-none placeholder:text-mist focus:border-willow" />
                 <button className="flex w-full items-center justify-center gap-2 rounded-full bg-espresso py-3.5 text-sm font-bold text-ivory transition hover:bg-black">
                   Send message <ArrowRight size={15} />
                 </button>
+                <p className="text-center text-[11px] text-mist">
+                  Your message opens in your email app, addressed to <span className="font-semibold text-espresso">{contact.email || 'the email you enter'}</span>.
+                </p>
               </form>
             )}
           </div>

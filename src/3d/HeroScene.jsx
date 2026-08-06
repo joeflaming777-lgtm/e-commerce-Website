@@ -24,11 +24,11 @@ export default function HeroScene() {
     >
       <StudioLights />
       <Parallax>
-        <BatModel position={[-1.35, 0, 0]} rotation={[0.05, 0.38, 0]} scale={0.95} grip="#3F2A1A" sticker="#1F1A33" />
-        <BallModel position={[1.6, 0.55, 0.5]} color="#B33A2B" />
-        <BallModel position={[1.15, -0.85, -0.2]} color="#F5F1E6" radius={0.42} />
+        <BatModel position={[-1.35, 0, 0]} rotation={[0.05, 0.38, 0]} scale={0.95} grip="#1F1F1F" sticker="#0A0A0A" />
+        <BallModel position={[1.6, 0.55, 0.5]} color="#262626" />
+        <BallModel position={[1.15, -0.85, -0.2]} color="#F5F5F5" radius={0.42} />
       </Parallax>
-      <ContactShadows position={[0, -1.55, 0]} opacity={0.4} scale={9} blur={2.6} far={3.2} color="#3f2a1a" />
+      <ContactShadows position={[0, -1.55, 0]} opacity={0.4} scale={9} blur={2.6} far={3.2} color="#3a3a3a" />
     </Canvas>
   )
 }

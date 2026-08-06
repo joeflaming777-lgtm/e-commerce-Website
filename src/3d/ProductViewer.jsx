@@ -9,10 +9,10 @@ import StudioLights from './StudioLights'
 // `type`: 'bat' | 'ball'. For bats, opts map to Build-Studio materials.
 export default function ProductViewer({
   type = 'bat',
-  color = '#B33A2B',
-  wood = '#E7D7B6',
-  grip = '#3F2A1A',
-  sticker = '#1F1A33',
+  color = '#262626',
+  wood = '#E4E4E4',
+  grip = '#1F1F1F',
+  sticker = '#0A0A0A',
   engraving = '',
 }) {
   return (
@@ -38,7 +38,7 @@ export default function ProductViewer({
           )}
         </Suspense>
         <OrbitControls enableZoom={false} enablePan={false} enableDamping dampingFactor={0.08} minPolarAngle={0.6} maxPolarAngle={2.3} autoRotate autoRotateSpeed={0.9} />
-        <ContactShadows position={[0, -1.7, 0]} opacity={0.35} scale={8} blur={2.5} far={3} color="#3f2a1a" />
+        <ContactShadows position={[0, -1.7, 0]} opacity={0.35} scale={8} blur={2.5} far={3} color="#3a3a3a" />
       </Canvas>
     </>
   )

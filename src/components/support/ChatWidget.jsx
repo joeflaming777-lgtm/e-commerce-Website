@@ -30,10 +30,11 @@ export default function ChatWidget() {
 
   const botReply = (text) => {
     setTyping(true)
+    // Instant feel — just enough delay to show the typing dots.
     setTimeout(() => {
       setTyping(false)
       setMsgs((m) => [...m, { role: 'bot', text }])
-    }, 900 + Math.random() * 700)
+    }, 250 + Math.random() * 200)
   }
 
   const send = (text) => {
@@ -73,11 +74,11 @@ export default function ChatWidget() {
             <div className="flex items-center gap-3 bg-espresso px-4 py-3.5 text-ivory">
               <span className="relative grid h-9 w-9 place-items-center rounded-full bg-leather/30">
                 <Headset size={17} />
-                <span className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-emerald-400 ring-2 ring-espresso" />
+                <span className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-mist ring-2 ring-espresso" />
               </span>
               <div className="leading-tight">
                 <p className="text-sm font-bold">Maidan Support</p>
-                <p className="text-[11px] text-ivory/70">Online · replies in ~1 min</p>
+                <p className="text-[11px] text-ivory/70">Online · instant replies</p>
               </div>
             </div>
 

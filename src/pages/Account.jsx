@@ -26,9 +26,9 @@ export default function Account() {
             <div>
               <h1 className="font-display text-3xl font-semibold">Hi, {user.name}</h1>
               <p className="mt-1 text-sm text-ivory/70">
-                {user.email || `+91 ${user.phone}`}
+                {user.email}
                 <span className="ml-2 rounded-full bg-ivory/15 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider">
-                  {user.method === 'google' ? 'Google' : 'Mobile'}
+                  Member
                 </span>
               </p>
             </div>

@@ -1,3 +1,5 @@
+import { Check } from 'lucide-react'
+
 export default function OptionPanel({ groups, value, onChange }) {
   return (
     <div className="divide-y divide-espresso/8">
@@ -11,11 +13,14 @@ export default function OptionPanel({ groups, value, onChange }) {
                 <button
                   key={v.key}
                   onClick={() => onChange(v.key)}
+                  aria-pressed={active}
                   className={`flex items-center gap-2 rounded-full border px-3 py-2 text-xs font-semibold transition ${
                     active ? 'border-espresso bg-espresso text-ivory' : 'border-espresso/15 bg-white text-espresso hover:bg-cream'
                   }`}
                 >
-                  <span className="h-4 w-4 rounded-full ring-1 ring-black/10" style={{ background: v.color }} />
+                  <span className="relative grid h-4 w-4 place-items-center rounded-full ring-1 ring-black/10" style={{ background: v.color }}>
+                    {active && <Check size={10} strokeWidth={3} className="text-white drop-shadow" />}
+                  </span>
                   {v.name}
                 </button>
               )

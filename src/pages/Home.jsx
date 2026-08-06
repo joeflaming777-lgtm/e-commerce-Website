@@ -131,8 +131,8 @@ function CategoryTiles() {
 function PlayerSections() {
   const palette = {
     men: { from: 'from-espresso', to: 'to-black', tint: 'text-sand' },
-    women: { from: 'from-[#5a3a2a]', to: 'to-[#2b1c14]', tint: 'text-[#e8c8a8]' },
-    juniors: { from: 'from-[#6b4a2b]', to: 'to-[#3a2715]', tint: 'text-[#e3d0ae]' },
+    women: { from: 'from-[#3a3a3a]', to: 'to-[#1a1a1a]', tint: 'text-[#e3e3e3]' },
+    juniors: { from: 'from-[#4a4a4a]', to: 'to-[#222222]', tint: 'text-[#e6e6e6]' },
   }
   const art = { men: 'bat', women: 'pads', juniors: 'ball' }
   return (
@@ -211,7 +211,7 @@ function CompareTeaser() {
               <div key={l} className="contents">
                 <div className="bg-white/5 px-2 py-3 text-left font-semibold text-ivory/80">{l}</div>
                 <div className="bg-white/5 px-2 py-3 text-sand">{a}</div>
-                <div className="bg-white/5 px-2 py-3 font-bold text-[#f3d9a4]">{b}</div>
+                <div className="bg-white/5 px-2 py-3 font-bold text-[#f5f5f5]">{b}</div>
                 <div className="bg-white/5 px-2 py-3 text-sand">{c}</div>
               </div>
             ))}

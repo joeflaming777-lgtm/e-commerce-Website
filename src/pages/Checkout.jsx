@@ -40,7 +40,7 @@ export default function Checkout() {
           <div>
             <h1 className="font-display text-3xl text-espresso">Nothing to check out</h1>
             <p className="mt-2 text-sm text-mist">Your bag is empty.</p>
-            <Link to="/shop" className="mt-6 inline-block rounded-full bg-espresso px-7 py-3.5 text-sm font-bold text-ivory transition hover:bg-black">Go to shop</Link>
+            <Link to="/shop" className="mt-6 inline-block rounded-full bg-espresso px-7 py-3.5 text-sm font-bold text-ivory transition hover:bg-espresso-deep">Go to shop</Link>
           </div>
         </div>
       </Page>
@@ -61,7 +61,7 @@ export default function Checkout() {
 
   const placeOrderNow = () => {
     setPlacing(true)
-    const id = 'MCC' + Math.random().toString(36).slice(2, 8).toUpperCase()
+    const id = 'TPS' + Math.random().toString(36).slice(2, 8).toUpperCase()
     setTimeout(() => {
       placeOrder({ id, date: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }), items, total, payment: PAY_METHODS.find((m) => m.key === pay).label, status: 'Processing', address: addr })
       clear()
@@ -105,7 +105,7 @@ export default function Checkout() {
                   <Input label="State" value={addr.state} error={errors.state} onChange={(e) => setAddr({ ...addr, state: e.target.value })} placeholder="State" />
                   <Input label="PIN code" value={addr.pin} error={errors.pin} inputMode="numeric" maxLength={6} onChange={(e) => setAddr({ ...addr, pin: e.target.value.replace(/[^0-9]/g, '') })} placeholder="6-digit PIN" />
                 </div>
-                <button onClick={() => validateAddr() && setStep(2)} className="flex w-full items-center justify-center gap-2 rounded-full bg-espresso py-3.5 text-sm font-bold text-ivory transition hover:bg-black">
+                <button onClick={() => validateAddr() && setStep(2)} className="flex w-full items-center justify-center gap-2 rounded-full bg-espresso py-3.5 text-sm font-bold text-ivory transition hover:bg-espresso-deep">
                   Continue to payment <ChevronRight size={16} />
                 </button>
               </div>
@@ -141,7 +141,7 @@ export default function Checkout() {
                 )}
                 <div className="flex gap-3">
                   <button onClick={() => setStep(1)} className="inline-flex items-center gap-2 rounded-full border border-espresso/15 px-6 py-3.5 text-sm font-bold text-espresso transition hover:bg-cream"><ChevronLeft size={15} /> Back</button>
-                  <button onClick={() => setStep(3)} className="flex flex-1 items-center justify-center gap-2 rounded-full bg-espresso py-3.5 text-sm font-bold text-ivory transition hover:bg-black">
+                  <button onClick={() => setStep(3)} className="flex flex-1 items-center justify-center gap-2 rounded-full bg-espresso py-3.5 text-sm font-bold text-ivory transition hover:bg-espresso-deep">
                     Review order <ChevronRight size={16} />
                   </button>
                 </div>
@@ -173,7 +173,7 @@ export default function Checkout() {
                   <p className="mt-1 text-xs text-mist">All mock — no real payment is processed in this demo.</p>
                 </div>
                 <button onClick={placeOrderNow} disabled={placing}
-                  className="flex w-full items-center justify-center gap-2 rounded-full bg-espresso py-4 text-sm font-bold text-ivory transition hover:bg-black disabled:opacity-60">
+                  className="flex w-full items-center justify-center gap-2 rounded-full bg-espresso py-4 text-sm font-bold text-ivory transition hover:bg-espresso-deep disabled:opacity-60">
                   {placing ? <><Loader2 size={16} className="animate-spin" /> Placing your order…</> : <>Place order · {formatINR(total)}</>}
                 </button>
               </div>

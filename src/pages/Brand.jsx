@@ -25,7 +25,7 @@ export default function Brand() {
           <span className="font-semibold text-espresso">{brand.name}</span>
         </nav>
 
-        <div className="mt-6 grid gap-8 rounded-3xl bg-gradient-to-br from-espresso to-black p-8 text-ivory sm:p-12 lg:grid-cols-[1fr_1.2fr]">
+        <div className="mt-6 grid gap-8 rounded-3xl bg-gradient-to-br from-espresso to-espresso-deep p-8 text-ivory sm:p-12 lg:grid-cols-[1fr_1.2fr]">
           <div>
             <span className="inline-grid h-20 w-20 place-items-center rounded-2xl bg-ivory font-display text-2xl font-bold text-espresso">{brand.mark}</span>
             <h1 className="mt-5 font-display text-4xl font-semibold sm:text-5xl">{brand.name}</h1>

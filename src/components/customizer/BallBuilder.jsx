@@ -70,12 +70,12 @@ export default function BallBuilder() {
           <input
             value={ball.seamText}
             onChange={(e) => setBall({ seamText: e.target.value.toUpperCase().slice(0, 12) })}
-            placeholder="e.g. MAIDAN 26"
+            placeholder="e.g. PAVILION 26"
             className="mt-2 w-full rounded-xl border border-espresso/15 bg-white px-4 py-3 text-sm uppercase outline-none placeholder:text-mist focus:border-willow"
           />
         </div>
 
-        <button onClick={addToCart} className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-espresso py-4 text-sm font-bold text-ivory transition hover:-translate-y-0.5 hover:bg-black hover:shadow-warm">
+        <button onClick={addToCart} className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-espresso py-4 text-sm font-bold text-ivory transition hover:-translate-y-0.5 hover:bg-espresso-deep hover:shadow-warm">
           <ShoppingBag size={16} /> Add custom ball · {formatINR(final)}
         </button>
       </div>

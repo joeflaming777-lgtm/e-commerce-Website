@@ -33,7 +33,7 @@ export default function Category() {
           <span className="font-semibold text-espresso">{cat.name}</span>
         </nav>
 
-        <div className="mt-6 rounded-3xl bg-gradient-to-br from-espresso to-black p-8 text-ivory sm:p-12">
+        <div className="mt-6 rounded-3xl bg-gradient-to-br from-espresso to-espresso-deep p-8 text-ivory sm:p-12">
           <Reveal>
             <p className="eyebrow text-sand/80">{cat.tagline}</p>
             <h1 className="mt-3 font-display text-4xl font-semibold sm:text-5xl">{cat.name}</h1>
@@ -71,7 +71,7 @@ export default function Category() {
           sub="Pick up to four bats or balls and put them side-by-side on weight, swing, blade and sweet spot."
         />
         <div className="mt-8 text-center">
-          <Link to="/compare" className="inline-flex items-center gap-2 rounded-full bg-espresso px-8 py-3.5 text-sm font-bold text-ivory transition hover:bg-black">
+          <Link to="/compare" className="inline-flex items-center gap-2 rounded-full bg-espresso px-8 py-3.5 text-sm font-bold text-ivory transition hover:bg-espresso-deep">
             Open the Compare Studio
           </Link>
         </div>

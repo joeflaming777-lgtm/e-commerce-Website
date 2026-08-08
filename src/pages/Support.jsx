@@ -20,8 +20,8 @@ export default function Support() {
   const submitContact = (e) => {
     e.preventDefault()
     const { name, email, topic, message } = contact
-    const subjectLine = encodeURIComponent(`Maidan support enquiry — ${topic}`)
-    const body = encodeURIComponent(`Hi,\n\n${message}\n\n— ${name}\n(sent from maidan.co support)`)
+    const subjectLine = encodeURIComponent(`ThePavilionStore support enquiry — ${topic}`)
+    const body = encodeURIComponent(`Hi,\n\n${message}\n\n— ${name}\n(sent from thepavilionstore support)`)
     const href = `mailto:${email}?subject=${subjectLine}&body=${body}`
     window.location.href = href
     setSent(true)
@@ -34,7 +34,7 @@ export default function Support() {
   return (
     <Page>
       <div className="container-site py-10">
-        <div className="rounded-3xl bg-gradient-to-br from-espresso to-black p-8 text-ivory sm:p-12">
+        <div className="rounded-3xl bg-gradient-to-br from-espresso to-espresso-deep p-8 text-ivory sm:p-12">
           <Reveal>
             <p className="eyebrow flex items-center gap-2 text-sand/80"><Headset size={15} /> Support centre</p>
             <h1 className="mt-3 font-display text-4xl font-semibold sm:text-5xl">How can we help?</h1>
@@ -96,7 +96,7 @@ export default function Support() {
                   {['Orders & delivery', 'Returns & warranty', 'Build Studio / custom', 'Sizing help', 'Something else'].map((o) => <option key={o}>{o}</option>)}
                 </select>
                 <textarea required rows={4} placeholder="Tell us what you need…" value={contact.message} onChange={setField('message')} className="w-full resize-none rounded-xl border border-espresso/15 bg-white px-4 py-3 text-sm outline-none placeholder:text-mist focus:border-willow" />
-                <button className="flex w-full items-center justify-center gap-2 rounded-full bg-espresso py-3.5 text-sm font-bold text-ivory transition hover:bg-black">
+                <button className="flex w-full items-center justify-center gap-2 rounded-full bg-espresso py-3.5 text-sm font-bold text-ivory transition hover:bg-espresso-deep">
                   Send message <ArrowRight size={15} />
                 </button>
                 <p className="text-center text-[11px] text-mist">

@@ -36,7 +36,7 @@ export default function Login() {
         setErrors({ form: res.error })
         return
       }
-      toast(mode === 'login' ? `Welcome back, ${form.email.split('@')[0]}! 🏏` : 'Account created — welcome to Maidan! 🏏', 'success')
+      toast(mode === 'login' ? `Welcome back, ${form.email.split('@')[0]}! 🏏` : 'Account created — welcome to ThePavilionStore! 🏏', 'success')
       navigate('/account')
     }, 700)
   }
@@ -45,7 +45,7 @@ export default function Login() {
     <Page>
       <div className="container-site grid min-h-[calc(100vh-8rem)] items-stretch gap-0 overflow-hidden rounded-3xl border border-espresso/10 lg:grid-cols-2">
         {/* brand panel */}
-        <div className="relative hidden flex-col justify-between overflow-hidden bg-gradient-to-br from-espresso to-black p-12 text-ivory lg:flex">
+        <div className="relative hidden flex-col justify-between overflow-hidden bg-gradient-to-br from-espresso to-espresso-deep p-12 text-ivory lg:flex">
           <span className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-leather/20 blur-3xl" />
           <span className="absolute -bottom-20 -left-10 h-72 w-72 rounded-full bg-sand/10 blur-3xl" />
           <div className="relative">
@@ -76,7 +76,7 @@ export default function Login() {
               {mode === 'register' ? 'Create your account' : 'Welcome back'}
             </h1>
             <p className="mt-2 text-sm text-mist">
-              {mode === 'register' ? 'Join Maidan to unlock orders, Build Studio and compare.' : 'Sign in to track orders and build your kit.'}
+              {mode === 'register' ? 'Join ThePavilionStore to unlock orders, Build Studio and compare.' : 'Sign in to track orders and build your kit.'}
             </p>
 
             {/* mode tabs */}
@@ -124,14 +124,14 @@ export default function Login() {
               {errors.form && <p className="rounded-xl bg-leather/10 px-4 py-2.5 text-xs font-semibold text-espresso">{errors.form}</p>}
 
               <button type="submit" disabled={busy}
-                className="flex w-full items-center justify-center gap-2 rounded-full bg-espresso py-3.5 text-sm font-bold text-ivory transition hover:bg-black disabled:opacity-60">
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-espresso py-3.5 text-sm font-bold text-ivory transition hover:bg-espresso-deep disabled:opacity-60">
                 {busy && <Loader2 size={15} className="animate-spin" />}
                 {mode === 'register' ? 'Create account' : 'Sign in'}
               </button>
             </form>
 
             <p className="mt-6 text-center text-sm text-mist">
-              {mode === 'register' ? 'Already a member? ' : 'New to Maidan? '}
+              {mode === 'register' ? 'Already a member? ' : 'New to ThePavilionStore? '}
               <button onClick={() => { setMode(mode === 'register' ? 'login' : 'register'); setErrors({}) }} className="font-bold text-leather transition hover:text-willow">
                 {mode === 'register' ? 'Sign in' : 'Create an account'}
               </button>

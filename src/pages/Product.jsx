@@ -97,7 +97,7 @@ export default function Product() {
                 <BadgeCheck size={14} /> {brand}
               </Link>
               <span className="flex items-center gap-1 text-sm text-espresso">
-                <Star size={14} className="fill-leather text-leather" /> {rating}
+                <Star size={14} className="fill-gold text-gold" /> {rating}
                 <span className="text-xs text-mist">({reviews} reviews)</span>
               </span>
             </div>
@@ -130,7 +130,7 @@ export default function Product() {
             {/* qty + actions */}
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Quantity value={qty} onChange={setQty} />
-              <button onClick={addToCart} className="flex flex-1 items-center justify-center gap-2 rounded-full bg-espresso px-8 py-3.5 text-sm font-bold text-ivory transition hover:-translate-y-0.5 hover:bg-black hover:shadow-warm">
+              <button onClick={addToCart} className="flex flex-1 items-center justify-center gap-2 rounded-full bg-espresso px-8 py-3.5 text-sm font-bold text-ivory transition hover:-translate-y-0.5 hover:bg-espresso-deep hover:shadow-warm">
                 <ShoppingBag size={16} /> Add to Bag
               </button>
               <button
@@ -183,7 +183,7 @@ export default function Product() {
               ))}
             </div>
           </div>
-          <div className="rounded-3xl border border-espresso/8 bg-gradient-to-br from-espresso to-black p-8 text-ivory">
+          <div className="rounded-3xl border border-espresso/8 bg-gradient-to-br from-espresso to-espresso-deep p-8 text-ivory">
             <p className="eyebrow text-sand/80">Gear up like a pro</p>
             <h3 className="mt-2 font-display text-2xl">Not sure if it suits your game?</h3>
             <p className="mt-3 text-sm leading-relaxed text-ivory/80">Compare it against up to three other options on weight, height, swing and sweet spot — then pick the one that fits your style.</p>

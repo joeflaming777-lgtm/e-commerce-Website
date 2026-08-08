@@ -1,0 +1,1 @@
+import{r as a,I as o,j as i,o as s}from"./index-BdvZ0DJR.js";function e({children:t}){return a.useEffect(()=>{o()},[]),i.jsx(s.main,{initial:{opacity:0,y:14},animate:{opacity:1,y:0},exit:{opacity:0,y:-8},transition:{duration:.34,ease:[.22,1,.36,1]},children:t})}export{e as P};

@@ -21,7 +21,7 @@ export default function CartDrawer({ open, onClose }) {
           <span className="grid h-16 w-16 place-items-center rounded-full bg-cream text-leather"><ShoppingBag size={26} /></span>
           <h4 className="mt-4 font-display text-xl text-espresso">Your bag is empty</h4>
           <p className="mt-2 text-sm text-mist">Fill it with a bat that fits your game.</p>
-          <button onClick={() => { onClose(); navigate('/shop') }} className="mt-6 rounded-full bg-espresso px-6 py-3 text-sm font-bold text-ivory transition hover:bg-black">
+          <button onClick={() => { onClose(); navigate('/shop') }} className="mt-6 rounded-full bg-espresso px-6 py-3 text-sm font-bold text-ivory transition hover:bg-espresso-deep">
             Start Shopping
           </button>
         </div>
@@ -59,7 +59,7 @@ export default function CartDrawer({ open, onClose }) {
             <p className="mt-1 text-xs text-mist">Delivery calculated at checkout.</p>
             <button
               onClick={() => { onClose(); navigate('/checkout') }}
-              className="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-espresso py-3.5 text-sm font-bold text-ivory transition hover:bg-black"
+              className="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-espresso py-3.5 text-sm font-bold text-ivory transition hover:bg-espresso-deep"
             >
               Checkout <ArrowRight size={16} />
             </button>

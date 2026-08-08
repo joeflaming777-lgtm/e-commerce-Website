@@ -46,7 +46,7 @@ export default function ProductCard({ product, index = 0 }) {
             <button
               onClick={quickAdd}
               aria-label="Quick add to bag"
-              className="grid h-9 w-9 place-items-center rounded-full bg-espresso text-ivory shadow-card transition hover:scale-105 hover:bg-black"
+              className="grid h-9 w-9 place-items-center rounded-full bg-espresso text-ivory shadow-card transition hover:scale-105 hover:bg-espresso-deep"
             >
               <ShoppingBag size={15} />
             </button>
@@ -65,7 +65,7 @@ export default function ProductCard({ product, index = 0 }) {
           <div className="flex items-center justify-between text-[11px] font-bold uppercase tracking-[0.14em] text-leather">
             <span>{brand}</span>
             <span className="flex items-center gap-1 normal-case tracking-normal text-mist">
-              <Star size={11} className="fill-leather text-leather" /> {rating} <span className="text-mist/70">({reviews})</span>
+              <Star size={11} className="fill-gold text-gold" /> {rating} <span className="text-mist/70">({reviews})</span>
             </span>
           </div>
           <h3 className="mt-1.5 font-display text-lg leading-snug text-espresso">{name}</h3>

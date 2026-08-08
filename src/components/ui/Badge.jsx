@@ -1,7 +1,7 @@
 const tones = {
-  sale: 'bg-espresso text-ivory',
+  sale: 'bg-gold text-espresso',
   new: 'bg-willow text-ivory',
-  brand: 'bg-espresso text-ivory',
+  brand: 'bg-espresso text-gold-soft',
   soft: 'bg-cream text-espresso',
   low: 'bg-sand/70 text-espresso',
 }

@@ -35,7 +35,7 @@ function Hero() {
         <div>
           <Reveal>
             <p className="eyebrow flex items-center gap-2 text-leather">
-              <span className="inline-block h-1.5 w-1.5 rounded-full bg-leather" /> Season 2026 range is live
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-gold" /> Season 2026 range is live
             </p>
           </Reveal>
           <Reveal delay={0.06}>
@@ -54,7 +54,7 @@ function Hero() {
           </Reveal>
           <Reveal delay={0.18}>
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <Link to="/shop" className="group inline-flex items-center gap-2 rounded-full bg-espresso px-8 py-4 text-sm font-bold text-ivory transition hover:-translate-y-0.5 hover:bg-black hover:shadow-warm">
+              <Link to="/shop" className="group inline-flex items-center gap-2 rounded-full bg-espresso px-8 py-4 text-sm font-bold text-ivory transition hover:-translate-y-0.5 hover:bg-espresso-deep hover:shadow-warm">
                 Shop the range <ArrowRight size={16} className="transition group-hover:translate-x-1" />
               </Link>
               <Link to="/customize" className="group inline-flex items-center gap-2 rounded-full border border-espresso/20 bg-white/70 px-8 py-4 text-sm font-bold text-espresso transition hover:-translate-y-0.5 hover:bg-white hover:shadow-warm">
@@ -130,9 +130,9 @@ function CategoryTiles() {
 
 function PlayerSections() {
   const palette = {
-    men: { from: 'from-espresso', to: 'to-black', tint: 'text-sand' },
-    women: { from: 'from-[#3a3a3a]', to: 'to-[#1a1a1a]', tint: 'text-[#e3e3e3]' },
-    juniors: { from: 'from-[#4a4a4a]', to: 'to-[#222222]', tint: 'text-[#e6e6e6]' },
+    men: { from: 'from-espresso', to: 'to-espresso-deep', tint: 'text-sand' },
+    women: { from: 'from-[#1d5ca3]', to: 'to-[#0f2d52]', tint: 'text-sand' },
+    juniors: { from: 'from-[#236a9e]', to: 'to-[#123a6b]', tint: 'text-sand' },
   }
   const art = { men: 'bat', women: 'pads', juniors: 'ball' }
   return (
@@ -192,11 +192,11 @@ function CompareTeaser() {
           <p className="mt-4 max-w-md text-[15px] leading-relaxed text-mist">
             Add up to four bats or balls and we’ll line up the numbers that actually matter — blade width, sweet spot, willow grade, grip — so you buy the bat that fits your game, not the marketing.
           </p>
-          <Link to="/compare" className="group mt-7 inline-flex items-center gap-2 rounded-full bg-espresso px-7 py-3.5 text-sm font-bold text-ivory transition hover:bg-black">
+          <Link to="/compare" className="group mt-7 inline-flex items-center gap-2 rounded-full bg-espresso px-7 py-3.5 text-sm font-bold text-ivory transition hover:bg-espresso-deep">
             Open the Compare Studio <ArrowRight size={15} className="transition group-hover:translate-x-1" />
           </Link>
         </div>
-        <div className="rounded-3xl bg-gradient-to-br from-espresso to-black p-6 text-ivory">
+        <div className="rounded-3xl bg-gradient-to-br from-espresso to-espresso-deep p-6 text-ivory">
           <div className="grid grid-cols-[1fr_repeat(3,1fr)] gap-px overflow-hidden rounded-2xl bg-white/15 text-center text-xs">
             {['Spec', 'A', 'B', 'C'].map((h, i) => (
               <div key={i} className={`px-2 py-3 font-bold ${i === 0 ? 'text-left text-sand/80' : 'text-sand'}`}>{h}</div>
@@ -226,7 +226,7 @@ function CompareTeaser() {
 function CustomizerTeaser() {
   return (
     <section className="container-site pb-16 lg:pb-20">
-      <div className="grid items-center gap-10 rounded-[2rem] bg-gradient-to-br from-espresso to-black p-8 text-ivory sm:p-12 lg:grid-cols-2">
+      <div className="grid items-center gap-10 rounded-[2rem] bg-gradient-to-br from-espresso to-espresso-deep p-8 text-ivory sm:p-12 lg:grid-cols-2">
         <div className="order-2 lg:order-1">
           <div className="grid h-full min-h-[16rem] place-items-center">
             <ProductArt art="bat" className="h-72 w-72 drop-shadow-2xl" />
@@ -261,7 +261,7 @@ function Testimonials() {
               <figure className="flex h-full flex-col rounded-3xl border border-espresso/8 bg-white/70 p-6">
                 <div className="flex gap-0.5">
                   {Array.from({ length: 5 }).map((_, j) => (
-                    <Star key={j} size={13} className={j < t.rating ? 'fill-leather text-leather' : 'text-mist/40'} />
+                    <Star key={j} size={13} className={j < t.rating ? 'fill-gold text-gold' : 'text-mist/40'} />
                   ))}
                 </div>
                 <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-espresso/90">“{t.quote}”</blockquote>
@@ -292,7 +292,7 @@ function CtaBand() {
             Get 10% off your first order, plus early access to new-season willow drops.
           </p>
           <div className="relative mt-8 flex justify-center">
-            <Link to="/shop" className="group inline-flex items-center gap-2 rounded-full bg-espresso px-8 py-4 text-sm font-bold text-ivory transition hover:-translate-y-0.5 hover:bg-black hover:shadow-warm">
+            <Link to="/shop" className="group inline-flex items-center gap-2 rounded-full bg-espresso px-8 py-4 text-sm font-bold text-ivory transition hover:-translate-y-0.5 hover:bg-espresso-deep hover:shadow-warm">
               Start shopping <ChevronRight size={16} className="transition group-hover:translate-x-1" />
             </Link>
           </div>

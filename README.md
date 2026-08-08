@@ -1,4 +1,4 @@
-# 🏏 Maidan Cricket Co.
+# 🏏 ThePavilionStore
 
 > A premium cricket e-commerce storefront built with React, Vite, and Three.js — featuring immersive 3D product visualisation, smooth animations, and a full shopping experience.
 
@@ -123,8 +123,8 @@ src/
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/your-username/maidan-cricket-co.git
-cd maidan-cricket-co
+git clone https://github.com/your-username/thepavilionstore.git
+cd thepavilionstore
 
 # 2. Install dependencies
 npm install
@@ -147,14 +147,16 @@ The app will be available at **http://localhost:5173**
 
 ## 🎨 Design System
 
-The project uses a warm cricket-inspired colour palette defined in `index.css`:
+The project uses a professional navy & gold e-commerce palette defined in `index.css`:
 
 | Token | Role |
 |---|---|
-| `espresso` | Primary dark / text |
+| `espresso` | Primary deep navy — buttons / headings / dark sections |
+| `espresso-deep` | Darker navy — hover states & gradient ends |
+| `willow` | Mid navy — prices, positive accents |
+| `gold` | Brand accent — sale badges, star ratings, logo |
 | `ivory` | Primary light / text on dark |
-| `leather` | Accent (cricket ball red-brown) |
-| `willow` | Price / positive accent |
+| `leather` | Muted slate — meta text / icons |
 | `linen` / `cream` | Card backgrounds |
 | `mist` | Secondary text / placeholders |
 | `sand` | Subtle highlight |
@@ -177,3 +179,9 @@ All global state lives in lightweight **Zustand** stores under `src/store/`:
 ## 📄 License
 
 This project is for educational and portfolio purposes. All brand names used within product data are fictional.
+
+---
+
+*let's make this a real e-commerce website for everything *
+
+---

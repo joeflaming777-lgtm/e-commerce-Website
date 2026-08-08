@@ -100,7 +100,7 @@ export default function JerseyBuilder() {
           <div className="mt-2 flex justify-between border-t border-espresso/10 pt-2 font-display text-lg font-semibold"><span>Total</span><span>{formatINR(final)}</span></div>
         </div>
 
-        <button onClick={addToCart} className="mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-espresso py-4 text-sm font-bold text-ivory transition hover:-translate-y-0.5 hover:bg-black hover:shadow-warm">
+        <button onClick={addToCart} className="mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-espresso py-4 text-sm font-bold text-ivory transition hover:-translate-y-0.5 hover:bg-espresso-deep hover:shadow-warm">
           <ShoppingBag size={16} /> Add custom jersey · {formatINR(final)}
         </button>
       </div>

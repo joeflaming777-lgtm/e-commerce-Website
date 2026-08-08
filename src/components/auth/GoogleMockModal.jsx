@@ -37,7 +37,7 @@ export default function GoogleMockModal({ open, onClose, onSelect }) {
           </span>
           <span className="text-sm font-bold text-espresso">Sign in with Google</span>
         </div>
-        <p className="mt-4 text-center text-sm text-mist">Choose an account to continue to Maidan Cricket Co.</p>
+        <p className="mt-4 text-center text-sm text-mist">Choose an account to continue to ThePavilionStore.</p>
 
         <div className="mt-5 space-y-2">
           {ACCOUNTS.map((acc) => (

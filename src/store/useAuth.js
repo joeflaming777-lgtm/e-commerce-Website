@@ -41,7 +41,7 @@ export const useAuth = create(
         set((s) => ({ orders: [...(s.orders || []), order] }))
       },
     }),
-    { name: 'maidan-auth' }
+    { name: 'thepavilionstore-auth' }
   )
 )
 

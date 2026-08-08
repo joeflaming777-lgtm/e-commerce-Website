@@ -65,7 +65,7 @@ export default function OrderConfirm() {
             </div>
 
             <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <Link to="/shop" className="inline-flex items-center gap-2 rounded-full bg-espresso px-7 py-3.5 text-sm font-bold text-ivory transition hover:bg-black">Continue shopping <ChevronRight size={15} /></Link>
+              <Link to="/shop" className="inline-flex items-center gap-2 rounded-full bg-espresso px-7 py-3.5 text-sm font-bold text-ivory transition hover:bg-espresso-deep">Continue shopping <ChevronRight size={15} /></Link>
               <Link to="/account" className="rounded-full border border-espresso/15 bg-white px-7 py-3.5 text-sm font-bold text-espresso transition hover:bg-cream">View my orders</Link>
             </div>
           </div>

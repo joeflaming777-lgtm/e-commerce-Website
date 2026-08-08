@@ -30,7 +30,7 @@ export const useCart = create(
         set({ items: [] })
       },
     }),
-    { name: 'maidan-cart' }
+    { name: 'thepavilionstore-cart' }
   )
 )
 

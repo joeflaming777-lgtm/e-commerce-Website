@@ -42,7 +42,7 @@ export default function CompareBar() {
                       <span className="block text-[10px] text-mist">{p.brand}</span>
                     </span>
                   </Link>
-                  <button onClick={() => remove(p.id)} aria-label={`Remove ${p.name}`} className="absolute -right-1 -top-1 grid h-4 w-4 place-items-center rounded-full bg-espresso text-ivory shadow hover:bg-black">
+                  <button onClick={() => remove(p.id)} aria-label={`Remove ${p.name}`} className="absolute -right-1 -top-1 grid h-4 w-4 place-items-center rounded-full bg-espresso text-ivory shadow hover:bg-espresso-deep">
                     <X size={10} />
                   </button>
                 </div>
@@ -53,7 +53,7 @@ export default function CompareBar() {
                 </Link>
               )}
             </div>
-            <Link to="/compare" className="mt-2.5 flex w-full items-center justify-center gap-2 rounded-xl bg-espresso py-3 text-sm font-bold text-ivory transition hover:bg-black">
+            <Link to="/compare" className="mt-2.5 flex w-full items-center justify-center gap-2 rounded-xl bg-espresso py-3 text-sm font-bold text-ivory transition hover:bg-espresso-deep">
               Compare dimensions <ArrowRight size={15} />
             </Link>
           </div>

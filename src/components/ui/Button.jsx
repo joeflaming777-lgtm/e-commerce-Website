@@ -8,7 +8,7 @@ const base =
 
 const variants = {
   primary:
-    'bg-espresso text-ivory hover:bg-black hover:-translate-y-0.5 hover:shadow-warm',
+    'bg-espresso text-ivory hover:bg-espresso-deep hover:-translate-y-0.5 hover:shadow-warm',
   leather:
     'bg-leather text-ivory hover:bg-willow hover:-translate-y-0.5 hover:shadow-warm',
   outline:

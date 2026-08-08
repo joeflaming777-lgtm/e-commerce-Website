@@ -53,7 +53,7 @@ export default function Footer() {
             className="mt-6 flex max-w-sm overflow-hidden rounded-full border border-espresso/15 bg-white"
           >
             <input type="email" required placeholder="Your email for deals & drops" className="min-w-0 flex-1 bg-transparent px-4 py-3 text-sm outline-none placeholder:text-mist" />
-            <button className="shrink-0 bg-espresso px-5 text-xs font-bold uppercase tracking-wider text-ivory transition hover:bg-black">Subscribe</button>
+            <button className="shrink-0 bg-espresso px-5 text-xs font-bold uppercase tracking-wider text-ivory transition hover:bg-espresso-deep">Subscribe</button>
           </form>
         </div>
 
@@ -87,9 +87,9 @@ export default function Footer() {
 
       <div className="border-t border-espresso/10">
         <div className="container-site flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
-          <p className="text-xs text-mist">© {new Date().getFullYear()} Maidan Cricket Co. All rights reserved.</p>
+          <p className="text-xs text-mist">© {new Date().getFullYear()} ThePavilionStore. All rights reserved.</p>
           <div className="flex items-center gap-3">
-            <span className="flex items-center gap-1.5 text-xs text-mist"><Mail size={13} /> care@maidan.co</span>
+            <span className="flex items-center gap-1.5 text-xs text-mist"><Mail size={13} /> care@thepavilionstore.com</span>
             <span className="h-4 w-px bg-espresso/15" />
             <a href="#/" aria-label="Instagram" className="rounded-full bg-espresso/5 p-2 text-espresso/70 transition hover:bg-espresso/10"><Instagram size={15} /></a>
             <a href="#/" aria-label="YouTube" className="rounded-full bg-espresso/5 p-2 text-espresso/70 transition hover:bg-espresso/10"><Youtube size={15} /></a>

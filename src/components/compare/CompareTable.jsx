@@ -50,7 +50,7 @@ export default function CompareTable({ products }) {
               </button>
               <button
                 onClick={() => { add({ key: p.id, productId: p.id, name: p.name, brand: p.brand, price: p.price, mrp: p.mrp, art: p.image, qty: 1 }); toast(`${p.name} added to bag`, 'cart') }}
-                className="mt-3 inline-flex items-center gap-1 rounded-full bg-espresso px-3 py-1.5 text-[11px] font-bold text-ivory transition hover:bg-black"
+                className="mt-3 inline-flex items-center gap-1 rounded-full bg-espresso px-3 py-1.5 text-[11px] font-bold text-ivory transition hover:bg-espresso-deep"
               >
                 <ShoppingBag size={11} /> Add
               </button>

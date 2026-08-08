@@ -14,7 +14,7 @@ export default function NotFound() {
           <p className="mt-2 text-lg font-semibold text-espresso">404 — that page was caught behind.</p>
           <p className="mx-auto mt-2 max-w-sm text-sm text-mist">The page you’re looking for doesn’t exist or has moved to the boundary.</p>
           <div className="mt-6 flex justify-center gap-3">
-            <Link to="/" className="rounded-full bg-espresso px-7 py-3.5 text-sm font-bold text-ivory transition hover:bg-black">Back home</Link>
+            <Link to="/" className="rounded-full bg-espresso px-7 py-3.5 text-sm font-bold text-ivory transition hover:bg-espresso-deep">Back home</Link>
             <Link to="/shop" className="rounded-full border border-espresso/15 bg-white px-7 py-3.5 text-sm font-bold text-espresso transition hover:bg-cream">Browse the shop</Link>
           </div>
         </div>

@@ -23,7 +23,7 @@ export default function Cart() {
             <h1 className="mt-5 font-display text-3xl font-semibold text-espresso">Your bag is empty</h1>
             <p className="mx-auto mt-2 max-w-sm text-sm text-mist">Fill it with a bat that fits your game, or build your own in the Studio.</p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <Link to="/shop" className="rounded-full bg-espresso px-7 py-3.5 text-sm font-bold text-ivory transition hover:bg-black">Browse the shop</Link>
+              <Link to="/shop" className="rounded-full bg-espresso px-7 py-3.5 text-sm font-bold text-ivory transition hover:bg-espresso-deep">Browse the shop</Link>
               <Link to="/customize" className="rounded-full border border-espresso/15 bg-white px-7 py-3.5 text-sm font-bold text-espresso transition hover:bg-cream">Build Studio</Link>
             </div>
           </div>
@@ -75,7 +75,7 @@ export default function Cart() {
               <span className="text-mist">Total</span>
               <span className="font-display text-2xl font-semibold text-espresso">{formatINR(total)}</span>
             </div>
-            <Link to="/checkout" className="mt-5 flex w-full items-center justify-center gap-2 rounded-full bg-espresso py-4 text-sm font-bold text-ivory transition hover:-translate-y-0.5 hover:bg-black hover:shadow-warm">
+            <Link to="/checkout" className="mt-5 flex w-full items-center justify-center gap-2 rounded-full bg-espresso py-4 text-sm font-bold text-ivory transition hover:-translate-y-0.5 hover:bg-espresso-deep hover:shadow-warm">
               Proceed to checkout <ArrowRight size={16} />
             </Link>
             <div className="mt-5 space-y-2.5 text-xs text-mist">

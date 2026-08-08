@@ -1,22 +1,26 @@
 @import "tailwindcss";
 
 @theme {
+  /* Professional e-commerce palette — deep navy, white & gold accent */
+  --color-espresso: #0f2d52;
+  --color-espresso-deep: #081c36;
+  --color-willow: #1d5ca3;
+  --color-ink: #12263d;
+  --color-leather: #5a6a82;
+  --color-mist: #5f748c;
   --color-ivory: #ffffff;
-  --color-cream: #f4f4f4;
-  --color-sand: #e6e6e6;
-  --color-linen: #fafafa;
-  --color-leather: #8a8a8a;
-  --color-willow: #1c1c1c;
-  --color-espresso: #0a0a0a;
-  --color-ink: #0a0a0a;
-  --color-mist: #6b6b6b;
+  --color-linen: #f7f9fc;
+  --color-cream: #eef3f9;
+  --color-sand: #dfe7f1;
+  --color-gold: #c9a227;
+  --color-gold-soft: #f4e9c8;
 
   --font-display: "Fraunces", "Georgia", serif;
   --font-sans: "Manrope", "Segoe UI", system-ui, sans-serif;
 
-  --shadow-warm: 0 18px 40px -18px rgba(0, 0, 0, 0.28);
-  --shadow-card: 0 10px 30px -12px rgba(0, 0, 0, 0.18);
-  --shadow-lift: 0 26px 60px -22px rgba(0, 0, 0, 0.35);
+  --shadow-warm: 0 18px 40px -18px rgba(9, 28, 54, 0.3);
+  --shadow-card: 0 10px 30px -12px rgba(9, 28, 54, 0.18);
+  --shadow-lift: 0 26px 60px -22px rgba(9, 28, 54, 0.35);
 
   --radius-btn: 999px;
 }
@@ -31,23 +35,23 @@
     font-feature-settings: "ss01", "cv11";
   }
   ::selection {
-    background: #0a0a0a;
-    color: #ffffff;
+    background: #c9a227;
+    color: #0f2d52;
   }
   ::-webkit-scrollbar {
     width: 11px;
     height: 11px;
   }
   ::-webkit-scrollbar-track {
-    background: #f4f4f4;
+    background: #eef3f9;
   }
   ::-webkit-scrollbar-thumb {
-    background: #b9b9b9;
+    background: #9db2cc;
     border-radius: 8px;
-    border: 3px solid #f4f4f4;
+    border: 3px solid #eef3f9;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #666666;
+    background: #5a6a82;
   }
   h1, h2, h3, h4 {
     @apply font-display;

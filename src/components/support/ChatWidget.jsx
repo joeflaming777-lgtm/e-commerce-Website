@@ -10,7 +10,7 @@ const QUICK = [
   { label: 'Build Studio', reply: 'Build your own bat or jersey in the Build Studio — willow grade, grip colour, engraving and name/number. Custom kit ships in 5–7 days.' },
 ]
 
-const BOT_OPEN = "Hi there! 👋 I'm Maddy from Maidan Cricket Co. Ask me about orders, sizing, returns, or custom bats."
+const BOT_OPEN = "Hi there! 👋 I'm Maddy from ThePavilionStore. Ask me about orders, sizing, returns, or custom bats."
 
 export default function ChatWidget() {
   const [open, setOpen] = useState(false)
@@ -48,7 +48,7 @@ export default function ChatWidget() {
     else if (lower.includes('bat') || lower.includes('weight')) botReply('Great question! The weight that suits you depends on your game. Most senior players choose 2.09–2.14 lb. Want me to recommend bats in that range?')
     else if (lower.includes('size') || lower.includes('shoe')) botReply('We ship shoes in UK sizes. Use the size-guide on any shoe page — or tell me your US/EU size and I’ll convert it for you. 👟')
     else if (lower.includes('custom') || lower.includes('studio')) botReply('The Build Studio lets you design your own bat (willow grade, grip, engraving) and jersey (colours, name, number). It ships in 5–7 days!')
-    else botReply('Thanks for the message! One of our gear specialists will reply within a few minutes. You can also reach us at care@maidan.co. 🏏')
+    else botReply('Thanks for the message! One of our gear specialists will reply within a few minutes. You can also reach us at care@thepavilionstore.com. 🏏')
   }
 
   return (
@@ -56,7 +56,7 @@ export default function ChatWidget() {
       <button
         onClick={() => setOpen((v) => !v)}
         aria-label="Open live support chat"
-        className="fixed bottom-5 right-5 z-[65] flex h-14 w-14 items-center justify-center rounded-full bg-espresso text-ivory shadow-lift transition hover:scale-105 hover:bg-black"
+        className="fixed bottom-5 right-5 z-[65] flex h-14 w-14 items-center justify-center rounded-full bg-espresso text-ivory shadow-lift transition hover:scale-105 hover:bg-espresso-deep"
       >
         {open ? <X size={22} /> : <MessageCircle size={22} />}
         {!open && <span className="absolute -right-0.5 -top-0.5 h-3 w-3 animate-pulse-dot rounded-full bg-leather" />}
@@ -77,7 +77,7 @@ export default function ChatWidget() {
                 <span className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-mist ring-2 ring-espresso" />
               </span>
               <div className="leading-tight">
-                <p className="text-sm font-bold">Maidan Support</p>
+                <p className="text-sm font-bold">ThePavilionStore Support</p>
                 <p className="text-[11px] text-ivory/70">Online · instant replies</p>
               </div>
             </div>
@@ -125,7 +125,7 @@ export default function ChatWidget() {
                 placeholder={user ? `Ask anything, ${user.name.split(' ')[0]}…` : 'Type a message…'}
                 className="min-w-0 flex-1 bg-transparent text-sm outline-none placeholder:text-mist"
               />
-              <button aria-label="Send message" className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-espresso text-ivory transition hover:bg-black">
+              <button aria-label="Send message" className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-espresso text-ivory transition hover:bg-espresso-deep">
                 <Send size={15} />
               </button>
             </form>

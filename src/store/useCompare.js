@@ -20,7 +20,7 @@ export const useCompare = create(
         set({ ids: [] })
       },
     }),
-    { name: 'maidan-compare' }
+    { name: 'thepavilionstore-compare' }
   )
 )
 

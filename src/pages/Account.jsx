@@ -20,7 +20,7 @@ export default function Account() {
   return (
     <Page>
       <div className="container-site py-10">
-        <div className="flex flex-wrap items-center justify-between gap-6 rounded-3xl bg-gradient-to-br from-espresso to-black p-8 text-ivory sm:p-10">
+        <div className="flex flex-wrap items-center justify-between gap-6 rounded-3xl bg-gradient-to-br from-espresso to-espresso-deep p-8 text-ivory sm:p-10">
           <div className="flex items-center gap-4">
             <span className="grid h-16 w-16 place-items-center rounded-2xl bg-ivory font-display text-2xl font-bold text-espresso">{initials}</span>
             <div>
@@ -71,7 +71,7 @@ export default function Account() {
                   <Package size={28} className="mx-auto text-leather" />
                   <p className="mt-3 font-display text-lg text-espresso">No orders yet</p>
                   <p className="mx-auto mt-1 max-w-xs text-sm text-mist">Your placed orders will appear here with live status.</p>
-                  <Link to="/shop" className="mt-5 inline-block rounded-full bg-espresso px-6 py-3 text-sm font-bold text-ivory transition hover:bg-black">Start shopping</Link>
+                  <Link to="/shop" className="mt-5 inline-block rounded-full bg-espresso px-6 py-3 text-sm font-bold text-ivory transition hover:bg-espresso-deep">Start shopping</Link>
                 </div>
               </div>
             ) : (

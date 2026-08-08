@@ -77,7 +77,7 @@ export default function BatBuilder() {
 
       <div className="rounded-3xl border border-espresso/10 bg-white/70 p-6">
         <OptionPanel groups={[BAT_OPTIONS.woodTone, BAT_OPTIONS.gripColor, BAT_OPTIONS.sticker]} value={bat.woodTone} onChange={(k) => setBat({ woodTone: k })} />
-        <button onClick={addToCart} className="mt-5 flex w-full items-center justify-center gap-2 rounded-full bg-espresso py-4 text-sm font-bold text-ivory transition hover:-translate-y-0.5 hover:bg-black hover:shadow-warm">
+        <button onClick={addToCart} className="mt-5 flex w-full items-center justify-center gap-2 rounded-full bg-espresso py-4 text-sm font-bold text-ivory transition hover:-translate-y-0.5 hover:bg-espresso-deep hover:shadow-warm">
           <ShoppingBag size={16} /> Add custom bat · {formatINR(price)}
         </button>
         <p className="mt-3 text-center text-[11px] text-mist">Hand-built to your spec · dispatched in 5–7 days</p>

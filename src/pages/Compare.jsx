@@ -54,7 +54,7 @@ export default function Compare() {
               </p>
             )}
             <CompareTable products={products} />
-            <div className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-3xl bg-gradient-to-br from-espresso to-black p-6 text-ivory sm:p-8">
+            <div className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-3xl bg-gradient-to-br from-espresso to-espresso-deep p-6 text-ivory sm:p-8">
               <div>
                 <p className="font-display text-xl">Picked a winner?</p>
                 <p className="mt-1 text-sm text-ivory/75">Add it straight to your bag from the table, or open its full page for the build-studio option.</p>

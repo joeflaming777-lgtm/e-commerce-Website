@@ -180,7 +180,5 @@ All global state lives in lightweight **Zustand** stores under `src/store/`:
 
 This project is for educational and portfolio purposes. All brand names used within product data are fictional.
 
----
-* let's join to make this *
----
+
 

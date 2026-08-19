@@ -1,14 +1,12 @@
-import { Suspense, lazy } from 'react'
 import { Link } from 'react-router-dom'
 import Page from '../components/layout/Page'
 import Reveal, { SectionHeading } from '../components/ui/Reveal'
 import ProductGrid from '../components/shop/ProductGrid'
-import ProductArt from '../assets/art/ProductArt'
 import { PRODUCTS, CATEGORIES, AUDIENCES, BRANDS } from '../data/products'
 import { TESTIMONIALS } from '../data/testimonials'
 import { ArrowRight, Star, Scale, Sparkles, ChevronRight } from 'lucide-react'
-
-const HeroScene = lazy(() => import('../3d/HeroScene'))
+import HeroScene from '../3d/HeroScene'
+import ProductArt from '../assets/art/ProductArt'
 
 export default function Home() {
   const bestSellers = PRODUCTS.filter((p) => p.rating >= 4.7).slice(0, 8)
@@ -75,9 +73,7 @@ function Hero() {
         </div>
 
         <div className="relative aspect-square lg:aspect-[4/3.2]">
-          <Suspense fallback={<div className="grid h-full place-items-center"><ProductArt art="bat" className="h-72 w-72 opacity-80" /></div>}>
-            <HeroScene />
-          </Suspense>
+          <HeroScene />
         </div>
       </div>
     </section>

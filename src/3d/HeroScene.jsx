@@ -1,34 +1,42 @@
-import { useRef } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
-import { ContactShadows } from '@react-three/drei'
-import BatModel from './BatModel'
-import BallModel from './BallModel'
-import StudioLights from './StudioLights'
-
-function Parallax({ children, speed = 0.35 }) {
-  const ref = useRef()
-  useFrame((state) => {
-    if (!ref.current) return
-    ref.current.rotation.y = state.pointer.x * speed
-    ref.current.rotation.x = state.pointer.y * speed * 0.5
-  })
-  return <group ref={ref}>{children}</group>
-}
-
+// Hero display using real product photography instead of Three.js 3D models.
 export default function HeroScene() {
   return (
-    <Canvas
-      dpr={[1, 1.5]}
-      camera={{ position: [0, 0.3, 7.2], fov: 36 }}
-      gl={{ antialias: true, alpha: true }}
-    >
-      <StudioLights />
-      <Parallax>
-        <BatModel position={[-1.35, 0, 0]} rotation={[0.05, 0.38, 0]} scale={0.95} grip="#1F1F1F" sticker="#0A0A0A" />
-        <BallModel position={[1.6, 0.55, 0.5]} color="#262626" />
-        <BallModel position={[1.15, -0.85, -0.2]} color="#F5F5F5" radius={0.42} />
-      </Parallax>
-      <ContactShadows position={[0, -1.55, 0]} opacity={0.4} scale={9} blur={2.6} far={3.2} color="#3a3a3a" />
-    </Canvas>
+    <div className="relative h-full w-full select-none overflow-hidden">
+      {/* Cricket Bat — main focal piece, left-centre */}
+      <div
+        className="absolute bottom-0 left-[4%] top-[5%] w-[40%] transition-transform duration-700 hover:scale-[1.03]"
+        style={{ filter: 'drop-shadow(0 24px 48px rgba(0,0,0,0.22))' }}
+      >
+        <img
+          src="/products/bat.jpg"
+          alt="Cricket bat"
+          className="h-full w-full object-contain"
+        />
+      </div>
+
+      {/* Red Cricket Ball — upper right */}
+      <div
+        className="absolute right-[14%] top-[8%] w-[30%] transition-transform duration-700 hover:scale-[1.05]"
+        style={{ filter: 'drop-shadow(0 18px 36px rgba(0,0,0,0.20))' }}
+      >
+        <img
+          src="/products/ball.jpg"
+          alt="Cricket ball"
+          className="w-full rounded-full object-contain"
+        />
+      </div>
+
+      {/* Cricket Kit Bag — lower right */}
+      <div
+        className="absolute bottom-[2%] right-[2%] w-[42%] transition-transform duration-700 hover:scale-[1.03]"
+        style={{ filter: 'drop-shadow(0 18px 36px rgba(0,0,0,0.18))' }}
+      >
+        <img
+          src="/products/kitbag.jpg"
+          alt="Cricket kit bag"
+          className="w-full object-contain"
+        />
+      </div>
+    </div>
   )
 }

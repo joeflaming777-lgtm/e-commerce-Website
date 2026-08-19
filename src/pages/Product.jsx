@@ -1,4 +1,4 @@
-import { Suspense, lazy, useState, useMemo } from 'react'
+import { useState, useMemo } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import Page from '../components/layout/Page'
 import ProductArt from '../assets/art/ProductArt'
@@ -9,9 +9,7 @@ import { getProduct, PRODUCTS, brandSlug, formatINR, SWATCH } from '../data/prod
 import { useCart } from '../store/useCart'
 import { useCompare } from '../store/useCompare'
 import { toast } from '../components/ui/Toast'
-import { ChevronRight, Star, ShoppingBag, Scale, Box, Rotate3d, Truck, ShieldCheck, BadgeCheck, Sparkles } from 'lucide-react'
-
-const ProductViewer = lazy(() => import('../3d/ProductViewer'))
+import { ChevronRight, Star, ShoppingBag, Scale, Truck, ShieldCheck, BadgeCheck, Sparkles, RotateCcw } from 'lucide-react'
 
 export default function Product() {
   const { id } = useParams()
@@ -19,7 +17,6 @@ export default function Product() {
   const add = useCart((s) => s.add)
   const { ids, toggle } = useCompare()
   const [qty, setQty] = useState(1)
-  const [view, setView] = useState('3d')
 
   const related = useMemo(() => PRODUCTS.filter((p) => p.category === product?.category && p.id !== product?.id).slice(0, 4), [product])
   if (!product) return null
@@ -27,7 +24,6 @@ export default function Product() {
   const { name, brand, price, mrp, rating, reviews, stock, colors, shortDesc, description, specs, audience, image } = product
   const discount = Math.round((1 - price / mrp) * 100)
   const comparing = ids.includes(id)
-  const is3d = product.category === 'bats' || product.category === 'balls'
 
   const addToCart = () => {
     add({ key: id, productId: id, name, brand, price, mrp, art: image, qty })
@@ -51,42 +47,12 @@ export default function Product() {
           {/* Visual */}
           <div className="lg:sticky lg:top-28 lg:self-start">
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-espresso/8 bg-gradient-to-br from-linen to-cream">
-              {is3d ? (
-                view === '3d' ? (
-                  <div className="absolute inset-0" key={id}>
-                    <Suspense fallback={<div className="grid h-full place-items-center"><div className="h-10 w-10 animate-spin rounded-full border-2 border-leather border-t-transparent" /></div>}>
-                      <ProductViewer
-                        type={product.category}
-                        wood="#E4E4E4" grip="#1F1F1F" sticker="#0A0A0A"
-                      />
-                    </Suspense>
-                  </div>
-                ) : (
-                  <div className="grid h-full place-items-center"><ProductArt art={image} className="h-[80%] w-[80%]" /></div>
-                )
-              ) : (
-                <div className="grid h-full place-items-center"><ProductArt art={image} className="h-[82%] w-[82%]" /></div>
-              )}
-
+              <div className="grid h-full place-items-center p-6">
+                <ProductArt art={image} className="h-full w-full object-contain" />
+              </div>
               <div className="absolute left-4 top-4 flex flex-col items-start gap-1.5">
                 {discount >= 10 && <span className="rounded-full bg-espresso px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-ivory">-{discount}%</span>}
               </div>
-
-              {is3d && (
-                <div className="absolute bottom-4 right-4 flex items-center gap-2 rounded-full bg-white/80 p-1 shadow-card backdrop-blur">
-                  <button onClick={() => setView('3d')} className={`flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-bold transition ${view === '3d' ? 'bg-espresso text-ivory' : 'text-espresso'}`}>
-                    <Rotate3d size={13} /> 3D
-                  </button>
-                  <button onClick={() => setView('photo')} className={`flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-bold transition ${view === 'photo' ? 'bg-espresso text-ivory' : 'text-espresso'}`}>
-                    <Box size={13} /> Studio
-                  </button>
-                </div>
-              )}
-              {view === '3d' && (
-                <span className="absolute left-4 top-3 hidden items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider text-mist sm:flex">
-                  <Rotate3d size={12} /> Drag to rotate
-                </span>
-              )}
             </div>
           </div>
 
@@ -154,7 +120,7 @@ export default function Product() {
 
             {/* trust */}
             <div className="mt-6 grid grid-cols-3 gap-3 text-center">
-              {[{ icon: Truck, t: 'Fast dispatch', s: '2–4 days' }, { icon: Rotate3d, t: '15-day returns', s: 'No questions' }, { icon: ShieldCheck, t: 'Warranty', s: bambooWarranty(product) }].map(({ icon: Icon, t, s }) => (
+              {[{ icon: Truck, t: 'Fast dispatch', s: '2–4 days' }, { icon: RotateCcw, t: '15-day returns', s: 'No questions' }, { icon: ShieldCheck, t: 'Warranty', s: bambooWarranty(product) }].map(({ icon: Icon, t, s }) => (
                 <div key={t} className="rounded-2xl border border-espresso/8 bg-white/60 p-3">
                   <Icon size={16} className="mx-auto text-leather" />
                   <p className="mt-1.5 text-xs font-bold text-espresso">{t}</p>

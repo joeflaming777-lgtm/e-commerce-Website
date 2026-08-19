@@ -15,7 +15,7 @@ export const PRODUCTS = [
   // ———————————— BATS ————————————
   {
     id: 'legend-pro', name: 'Legend Pro', brand: 'Gray-Nicolls', category: 'bats', audience: 'men',
-    price: 24999, mrp: 28999, stock: 14, rating: 4.9, reviews: 412, image: 'bat', colors: ['Espresso', 'Cream', 'Oxblood'],
+    price: 24999, mrp: 28999, stock: 14, rating: 4.9, reviews: 412, image: 'bat-gray-nicolls', colors: ['Espresso', 'Cream', 'Oxblood'],
     shortDesc: 'The flagship English willow blade trusted by top-order batters.',
     description:
       'Six-piece English willow, pressed to a mid profile with a long, pronounced spine. The Legend Pro balances a weight around 2.10 lb with a wide hitting arc — made for batters who like to come down the wicket. Supplied with an MRF-style grade band and classic G-N chevron decal.',
@@ -23,7 +23,7 @@ export const PRODUCTS = [
   },
   {
     id: 'genius-grand', name: 'Genius Grand Edition', brand: 'MRF', category: 'bats', audience: 'men',
-    price: 21999, mrp: 25999, stock: 9, rating: 4.8, reviews: 356, image: 'bat', colors: ['Navy', 'Gold', 'Red'],
+    price: 21999, mrp: 25999, stock: 9, rating: 4.8, reviews: 356, image: 'bat-mrf', colors: ['Navy', 'Gold', 'Red'],
     shortDesc: 'The Genius series with extra-thick edges and a huge sweet spot.',
     description:
       'Blade-built on the famous Genius mould, the Grand Edition is for power hitters. The edges run 40 mm into a light shoulder, keeping swing speed high without giving away the strike zone. A genuine 2.12 lb blade with a low-profile splice that keeps the pick-up soft.',
@@ -47,7 +47,7 @@ export const PRODUCTS = [
   },
   {
     id: 'kahuna-pro', name: 'Kahuna Pro', brand: 'Kookaburra', category: 'bats', audience: 'men',
-    price: 20999, mrp: 24999, stock: 11, rating: 4.7, reviews: 264, image: 'bat', colors: ['Yellow', 'Black'],
+    price: 20999, mrp: 24999, stock: 11, rating: 4.7, reviews: 264, image: 'bat-kookaburra', colors: ['Yellow', 'Black'],
     shortDesc: 'Kookaburra’s pro blade with a fast, low pick-up.',
     description:
       'Kahuna is Kookaburra’s famous bat line — the Pro sits at its head. A low-balanced blade with generous edges gives you whip through the ball without tiring the top hand. Ships with our kangaroo-grip and matching cover.',
@@ -55,11 +55,27 @@ export const PRODUCTS = [
   },
   {
     id: 'icon-808', name: 'Icon 808', brand: 'Gunn & Moore', category: 'bats', audience: 'men',
-    price: 22999, mrp: 26999, stock: 6, rating: 4.8, reviews: 143, image: 'bat', colors: ['Crimson', 'Cream'],
+    price: 22999, mrp: 26999, stock: 6, rating: 4.8, reviews: 143, image: 'bat-gm', colors: ['Crimson', 'Cream'],
     shortDesc: 'G&M heritage — timeless English willow for stroke play.',
     description:
       'The Icon 808 carries the Gunn & Moore DNA: a traditional English willow blade with a high spine and soft face. Purists will love the delicate pick-up and the clean middle that drives off both front and back foot.',
     specs: { weight: '2.10 lb', height: '86.3 cm', swing: 'Balanced', bladeWidth: '109 mm', edges: '38 mm', sweetSpot: '21 cm', willowGrade: 'English Willow 1', grip: 'G&M Pro Grip', material: 'English Willow' },
+  },
+  {
+    id: 'gladiator-pro', name: 'Gladiator', brand: 'TON', category: 'bats', audience: 'men',
+    price: 23499, mrp: 27500, stock: 8, rating: 4.8, reviews: 211, image: 'bat-ton', colors: ['Espresso', 'Cream'],
+    shortDesc: 'TON’s powerhouse blade — massive edges, supreme pick-up.',
+    description:
+      'The TON Gladiator is built for modern aggressive batting. Concave edge profile delivers exceptional power, while the Grade 1+ English willow ensures durability across long innings. A chrome embossed sticker finish and SS authenticity hologram complete the package.',
+    specs: { weight: '2.11 lb', height: '86.5 cm', swing: 'Mid-low', bladeWidth: '110 mm', edges: '42 mm', sweetSpot: '22 cm', willowGrade: 'English Willow 1+', grip: 'TON Pro Grip', material: 'English Willow' },
+  },
+  {
+    id: 'dc1080-nb', name: 'DC 1080', brand: 'New Balance', category: 'bats', audience: 'men',
+    price: 22499, mrp: 26999, stock: 12, rating: 4.7, reviews: 178, image: 'bat-new-balance', colors: ['Blue', 'White'],
+    shortDesc: 'New Balance’s elite blade with concave edges and balanced pick-up.',
+    description:
+      'The DC 1080 from New Balance represents the pinnacle of their cricket bat engineering. Featuring Grade 1 English willow, a concave edge profile for power, and NB’s signature blue sticker detailing that has become iconic on the international circuit.',
+    specs: { weight: '2.10 lb', height: '86.2 cm', swing: 'Balanced', bladeWidth: '109 mm', edges: '40 mm', sweetSpot: '21 cm', willowGrade: 'English Willow 1', grip: 'NB Pro Grip', material: 'English Willow' },
   },
   {
     id: 'zen-junior', name: 'Zen Kashmir Willow', brand: 'SS', category: 'bats', audience: 'juniors',
@@ -71,7 +87,7 @@ export const PRODUCTS = [
   },
   {
     id: 'scoop-junior', name: 'Scoop', brand: 'Gray-Nicolls', category: 'bats', audience: 'juniors',
-    price: 3999, mrp: 5200, stock: 41, rating: 4.6, reviews: 121, image: 'bat', colors: ['Blue', 'Orange'],
+    price: 3999, mrp: 5200, stock: 41, rating: 4.6, reviews: 121, image: 'bat-gray-nicolls', colors: ['Blue', 'Orange'],
     shortDesc: 'The perfect first hard-ball bat — sized, shaped and weighted for kids.',
     description:
       'The Scoop is Gray-Nicolls’ junior favourite. A compact blade with a low centre of gravity helps young batters swing naturally and find the middle early. Comes with a junior toe guard and grip fitted.',
@@ -256,8 +272,9 @@ export const BRANDS = [
   { slug: 'sg', name: 'SG', tagline: 'The official Test ball', mark: 'SG', blurb: 'Sanspareils Greenlands — the ball that swings, scuffs and reverses for the red-ball game.' },
   { slug: 'kookaburra', name: 'Kookaburra', tagline: 'Aussie kit, trusted worldwide', mark: 'KB', blurb: 'From the Sydney grade comps to Test cricket, Kookaburra builds balls and bats made to be hit.' },
   { slug: 'gunn-moore', name: 'Gunn & Moore', tagline: 'Since 1858 · Nottingham', mark: 'G&M', blurb: 'Traditional English willow with a devoted following among the stroke-makers of the game.' },
-  { slug: 'new-balance', name: 'New Balance', tagline: 'Wear the game', mark: 'NB', blurb: 'Performance apparel and footwear that follow the athlete’s movement, from jogging to the crease.' },
+  { slug: 'new-balance', name: 'New Balance', tagline: 'Performance on every pitch', mark: 'NB', blurb: 'From the DC bat range to on-field footwear, New Balance brings athletic precision to cricket.' },
   { slug: 'spartan', name: 'Spartan', tagline: 'Gear up, stand tall', mark: 'SP', blurb: 'Aggressive styling and accessible pricing — the kit of the schoolyard hero.' },
+  { slug: 'ton', name: 'TON', tagline: 'SS Cricket · Meerut', mark: 'TON', blurb: 'TON by SS Cricket — powerhouse blades built for the modern aggressive game, trusted across formats.' },
 ]
 
 export const AUDIENCES = [
@@ -285,6 +302,7 @@ const BRAND_SLUG_MAP = {
   'Gunn & Moore': 'gunn-moore',
   'New Balance': 'new-balance',
   Spartan: 'spartan',
+  TON: 'ton',
 }
 
 export const getProduct = (id) => PRODUCTS.find((p) => p.id === id)

@@ -3,7 +3,16 @@ import { memo } from 'react'
 // Real product photography mapped to each art key.
 // Images are served from /public/products/.
 const IMAGE_MAP = {
-  bat:    '/products/bat.jpg',
+  // Generic fallback bat
+  bat:              '/products/bat.jpg',
+  // Brand-specific bat images
+  'bat-mrf':        '/products/bat-mrf.png',
+  'bat-ton':        '/products/bat-ton.png',
+  'bat-gray-nicolls': '/products/bat-gray-nicolls.png',
+  'bat-kookaburra': '/products/bat-kookaburra.png',
+  'bat-new-balance': '/products/bat-new-balance.png',
+  'bat-gm':         '/products/bat-gm.png',
+  // Other equipment
   ball:   '/products/ball.jpg',
   pads:   '/products/pads.jpg',
   helmet: '/products/helmet.jpg',

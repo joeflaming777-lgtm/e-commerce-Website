@@ -3,8 +3,7 @@ import Page from '../components/layout/Page'
 import Reveal, { SectionHeading } from '../components/ui/Reveal'
 import ProductGrid from '../components/shop/ProductGrid'
 import { PRODUCTS, CATEGORIES, AUDIENCES, BRANDS } from '../data/products'
-import { TESTIMONIALS } from '../data/testimonials'
-import { ArrowRight, Star, Scale, Sparkles, ChevronRight } from 'lucide-react'
+import { ArrowRight, Scale, Sparkles, ChevronRight } from 'lucide-react'
 import HeroScene from '../3d/HeroScene'
 import ProductArt from '../assets/art/ProductArt'
 
@@ -20,7 +19,6 @@ export default function Home() {
       <BestSellers products={bestSellers} />
       <CompareTeaser />
       <CustomizerTeaser />
-      <Testimonials />
       <CtaBand />
     </Page>
   )
@@ -246,33 +244,6 @@ function CustomizerTeaser() {
   )
 }
 
-function Testimonials() {
-  return (
-    <section className="bg-cream/40 py-16 lg:py-20">
-      <div className="container-site">
-        <SectionHeading eyebrow="From the nets" title="Rated by people who play" align="center" className="text-center" />
-        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-          {TESTIMONIALS.map((t, i) => (
-            <Reveal key={t.name} delay={i * 0.06}>
-              <figure className="flex h-full flex-col rounded-3xl border border-espresso/8 bg-white/70 p-6">
-                <div className="flex gap-0.5">
-                  {Array.from({ length: 5 }).map((_, j) => (
-                    <Star key={j} size={13} className={j < t.rating ? 'fill-gold text-gold' : 'text-mist/40'} />
-                  ))}
-                </div>
-                <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-espresso/90">“{t.quote}”</blockquote>
-                <figcaption className="mt-5">
-                  <p className="text-sm font-bold text-espresso">{t.name}</p>
-                  <p className="text-xs text-mist">{t.role}</p>
-                </figcaption>
-              </figure>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
 
 function CtaBand() {
   return (

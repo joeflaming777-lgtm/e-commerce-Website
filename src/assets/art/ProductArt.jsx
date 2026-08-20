@@ -17,7 +17,10 @@ const IMAGE_MAP = {
   pads:   '/products/pads.jpg',
   helmet: '/products/helmet.jpg',
   gloves: '/products/gloves.jpg',
-  jersey: '/products/jersey.jpg',
+  jersey:            '/products/jersey.jpg',
+  'jersey-nb':       '/products/jersey-nb.png',
+  'jersey-spartan':  '/products/jersey-spartan.png',
+  'jersey-academy':  '/products/jersey-academy.png',
   shoes:  '/products/shoes.jpg',
   stumps: '/products/stumps.jpg',
 }
@@ -41,7 +44,10 @@ export const BallArt   = (props) => <ProductImg art="ball"   {...props} />
 export const PadsArt   = (props) => <ProductImg art="pads"   {...props} />
 export const HelmetArt = (props) => <ProductImg art="helmet" {...props} />
 export const GlovesArt = (props) => <ProductImg art="gloves" {...props} />
-export const JerseyArt = (props) => <ProductImg art="jersey" {...props} />
+export const JerseyArt        = (props) => <ProductImg art="jersey"          {...props} />
+export const JerseyNBArt      = (props) => <ProductImg art="jersey-nb"       {...props} />
+export const JerseySpartanArt = (props) => <ProductImg art="jersey-spartan"  {...props} />
+export const JerseyAcademyArt = (props) => <ProductImg art="jersey-academy"  {...props} />
 export const ShoesArt  = (props) => <ProductImg art="shoes"  {...props} />
 export const StumpsArt = (props) => <ProductImg art="stumps" {...props} />
 

@@ -205,7 +205,7 @@ export const PRODUCTS = [
   // ———————————— APPAREL ————————————
   {
     id: 'team-jersey', name: 'Team Jersey', brand: 'New Balance', category: 'apparel', audience: 'men',
-    price: 1899, mrp: 2400, stock: 66, rating: 4.6, reviews: 289, image: 'jersey', colors: ['Navy', 'White'],
+    price: 1899, mrp: 2400, stock: 66, rating: 4.6, reviews: 289, image: 'jersey-nb', colors: ['Navy', 'White'],
     shortDesc: 'Pro-cut match jersey with NB Dry moisture wicking.',
     description:
       'Cut for movement and airflow, the Team Jersey uses NB Dry fabric to pull sweat off the skin. Set-in sleeves and a dropped hem keep you covered through the dive.',
@@ -213,7 +213,7 @@ export const PRODUCTS = [
   },
   {
     id: 'spartan-women', name: 'Spartan Pro Jersey', brand: 'Spartan', category: 'apparel', audience: 'women',
-    price: 1699, mrp: 2100, stock: 58, rating: 4.7, reviews: 197, image: 'jersey', colors: ['Espresso', 'Cream'],
+    price: 1699, mrp: 2100, stock: 58, rating: 4.7, reviews: 197, image: 'jersey-spartan', colors: ['Espresso', 'Cream'],
     shortDesc: 'Women’s-specific cut with a sporty, slimmer fit.',
     description:
       'The Spartan Pro is shaped for the women’s game — a closer torso cut, dropped shoulders and breathable mesh side panels. Machine-washable, quick-dry fabric.',
@@ -221,7 +221,7 @@ export const PRODUCTS = [
   },
   {
     id: 'academy-tee', name: 'Academy Tee', brand: 'Gray-Nicolls', category: 'apparel', audience: 'juniors',
-    price: 899, mrp: 1200, stock: 110, rating: 4.5, reviews: 154, image: 'jersey', colors: ['Blue', 'White'],
+    price: 899, mrp: 1200, stock: 110, rating: 4.5, reviews: 154, image: 'jersey-academy', colors: ['Blue', 'White'],
     shortDesc: 'Training tee that survives the nets, wash after wash.',
     description:
       'A soft-touch training tee for young cricketers. Cotton-blend with reinforced shoulder seams so it holds up to the bag and the nets.',

@@ -130,3 +130,32 @@
 .no-scrollbar {
   scrollbar-width: none;
 }
+
+/* Lightweight reveal animation (replaces Framer Motion whileInView) */
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1), transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ProductCard staggered fade-up (CSS-only, no JS animation engine) */
+@keyframes fadeup {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeup {
+  animation: fadeup 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Page enter animation — CSS-driven, instant feel */
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.page-enter {
+  animation: page-in 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
+}

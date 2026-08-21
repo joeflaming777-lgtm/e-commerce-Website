@@ -1,17 +1,30 @@
-import { motion } from 'framer-motion'
+import { useEffect, useRef } from 'react'
 
-// Scroll-reveal wrapper used across home / section highlights.
-export default function Reveal({ children, delay = 0, y = 26, className = '', once = true }) {
+// Lightweight scroll-reveal using native IntersectionObserver + CSS.
+// Much cheaper than framer-motion for bulk scroll reveals.
+export default function Reveal({ children, delay = 0, className = '' }) {
+  const ref = useRef(null)
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.style.animationDelay = `${delay}s`
+          el.classList.add('reveal-visible')
+          obs.disconnect()
+        }
+      },
+      { rootMargin: '-60px' }
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [delay])
+
   return (
-    <motion.div
-      className={className}
-      initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once, margin: '-80px' }}
-      transition={{ duration: 0.65, delay, ease: [0.22, 1, 0.36, 1] }}
-    >
+    <div ref={ref} className={`reveal-hidden ${className}`}>
       {children}
-    </motion.div>
+    </div>
   )
 }
 

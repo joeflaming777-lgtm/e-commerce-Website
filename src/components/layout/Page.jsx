@@ -2,17 +2,16 @@ import { motion } from 'framer-motion'
 import { useEffect } from 'react'
 import { scrollToTop } from '../../lib/smoothScroll'
 
-// Page transition wrapper — fade + rise on route change, and a scroll reset.
+// Page transition wrapper — CSS fade-in on enter, framer exit for AnimatePresence.
 export default function Page({ children }) {
   useEffect(() => {
     scrollToTop()
   }, [])
   return (
     <motion.main
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.18 }}
+      className="page-enter"
     >
       {children}
     </motion.main>

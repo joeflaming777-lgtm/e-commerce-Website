@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import { motion } from 'framer-motion'
 import { ShoppingBag, Scale, Heart, Star } from 'lucide-react'
 import ProductArt from '../../assets/art/ProductArt'
 import { formatINR, SWATCH } from '../../data/products'
@@ -26,16 +25,11 @@ export default function ProductCard({ product, index = 0 }) {
   const lowStock = stock <= 10
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 22 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.5, delay: (index % 4) * 0.06, ease: [0.22, 1, 0.36, 1] }}
-    >
+    <div style={{ animationDelay: `${(index % 4) * 60}ms` }} className="animate-fadeup">
       <Link to={`/product/${id}`} className="group block overflow-hidden rounded-3xl border border-espresso/8 bg-white/70">
         {/* visual */}
         <div className="relative m-3 grid aspect-square place-items-center overflow-hidden rounded-2xl bg-gradient-to-br from-linen to-cream">
-          <ProductArt art={image} className="h-4/5 w-4/5 drop-shadow transition-transform duration-500 ease-out group-hover:scale-105" />
+          <ProductArt art={image} className="h-4/5 w-4/5 drop-shadow transition-transform duration-500 ease-out group-hover:scale-105" loading="lazy" />
           <div className="absolute left-3 top-3 flex flex-col items-start gap-1.5">
             {discount >= 10 && <Badge tone="sale">-{discount}%</Badge>}
             {audience === 'junior' && <Badge tone="new">Junior</Badge>}
@@ -91,6 +85,6 @@ export default function ProductCard({ product, index = 0 }) {
           </div>
         </div>
       </Link>
-    </motion.div>
+    </div>
   )
 }

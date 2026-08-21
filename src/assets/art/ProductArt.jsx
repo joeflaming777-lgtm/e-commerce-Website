@@ -25,12 +25,13 @@ const IMAGE_MAP = {
   stumps: '/products/stumps.jpg',
 }
 
-function ProductImg({ art = 'bat', className, style, ...props }) {
+function ProductImg({ art = 'bat', className, style, loading = 'eager', ...props }) {
   const src = IMAGE_MAP[art] || IMAGE_MAP.bat
   return (
     <img
       src={src}
       alt={art}
+      loading={loading}
       style={{ objectFit: 'contain', ...style }}
       className={className}
       {...props}

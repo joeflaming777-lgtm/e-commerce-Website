@@ -33,7 +33,7 @@ export default function App() {
       <AnnouncementBar />
       <Header onOpenCart={() => setCartOpen(true)} />
       <Suspense fallback={<PageLoader />}>
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" presenceAffectsLayout={false}>
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />
             <Route path="/shop" element={<ShopPage />} />
